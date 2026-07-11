@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>C Basic Programs</title>
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+
+body{
+
+    background:linear-gradient(135deg,#141e30,#243b55);
+    color:white;
+
+}
+
+
+
+header{
+
+    background:#00c6ff;
+    color:black;
+    padding:25px;
+    text-align:center;
+    font-size:32px;
+    font-weight:bold;
+
+}
+
+
+
+.container{
+
+    width:85%;
+    margin:30px auto;
+
+}
+
+
+
+.program{
+
+    background:white;
+    color:black;
+    padding:25px;
+    margin:25px 0;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.4);
+
+}
+
+
+
+.program h2{
+
+    color:#243b55;
+    margin-bottom:15px;
+
+}
+
+
+
+pre{
+
+    background:#111;
+    color:#00ff99;
+    padding:20px;
+    border-radius:10px;
+    overflow:auto;
+
+}
+
+
+
+button{
+
+    background:#243b55;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:20px;
+    cursor:pointer;
+    margin-top:10px;
+
+}
+
+
+
+button:hover{
+
+    background:#00c6ff;
+    color:black;
+
+}
+
+
+
+.navigation{
+
+    text-align:center;
+    margin:40px;
+
+}
+
+
+
+.navigation a{
+
+    text-decoration:none;
+    background:#00c6ff;
+    color:black;
+    padding:12px 25px;
+    border-radius:25px;
+    margin:10px;
+    font-weight:bold;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<header>
+
+C Basic Programs
+
+</header>
+
+
+
+
+<div class="container">
+
+
+
+
+
+<div class="program">
+
+<h2>1. Hello World Program</h2>
+
+
+<pre id="code1">
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    printf("Hello World");
+
+    return 0;
+}
+</pre>
+
+
+<button onclick="copyCode('code1')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+
+
+<div class="program">
+
+<h2>2. Add Two Numbers</h2>
+
+
+<pre id="code2">
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a,b,sum;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d",&a,&b);
+
+    sum=a+b;
+
+    printf("Sum = %d",sum);
+
+    return 0;
+}
+</pre>
+
+
+<button onclick="copyCode('code2')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="program">
+
+<h2>3. Swap Two Numbers</h2>
+
+
+<pre id="code3">
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a,b,temp;
+
+    printf("Enter values: ");
+    scanf("%d %d",&a,&b);
+
+    temp=a;
+    a=b;
+    b=temp;
+
+    printf("After swapping: %d %d",a,b);
+
+    return 0;
+}
+</pre>
+
+
+<button onclick="copyCode('code3')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="program">
+
+<h2>4. Find Area of Circle</h2>
+
+
+<pre id="code4">
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    float radius,area;
+
+    printf("Enter radius: ");
+    scanf("%f",&radius);
+
+    area=3.14*radius*radius;
+
+    printf("Area = %.2f",area);
+
+    return 0;
+}
+</pre>
+
+
+<button onclick="copyCode('code4')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="program">
+
+<h2>5. Simple Calculator</h2>
+
+
+<pre id="code5">
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a,b;
+
+    char op;
+
+    printf("Enter operator (+,-,*,/): ");
+    scanf("%c",&op);
+
+
+    printf("Enter two numbers: ");
+    scanf("%d %d",&a,&b);
+
+
+    switch(op)
+    {
+        case '+':
+            printf("%d",a+b);
+            break;
+
+        case '-':
+            printf("%d",a-b);
+            break;
+
+        case '*':
+            printf("%d",a*b);
+            break;
+
+        case '/':
+            printf("%d",a/b);
+            break;
+
+        default:
+            printf("Invalid Operator");
+    }
+
+
+    return 0;
+}
+</pre>
+
+
+<button onclick="copyCode('code5')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+<div class="navigation">
+
+
+<a href="programs.html">
+⬅ Programs Home
+</a>
+
+
+<a href="program-conditions.html">
+Next Chapter ➡
+</a>
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+function copyCode(id)
+{
+
+let code=document.getElementById(id).innerText;
+
+
+navigator.clipboard.writeText(code);
+
+
+alert("Code Copied Successfully!");
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>

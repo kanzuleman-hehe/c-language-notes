@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>C Structures Programs</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+
+body{
+
+    background:linear-gradient(135deg,#141e30,#243b55);
+    color:white;
+
+}
+
+
+header{
+
+    background:#00c6ff;
+    color:black;
+    padding:25px;
+    text-align:center;
+    font-size:32px;
+    font-weight:bold;
+
+}
+
+
+.container{
+
+    width:85%;
+    margin:30px auto;
+
+}
+
+
+
+.program{
+
+    background:white;
+    color:black;
+    padding:25px;
+    margin:25px 0;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.4);
+
+}
+
+
+
+.program h2{
+
+    color:#243b55;
+    margin-bottom:15px;
+
+}
+
+
+
+pre{
+
+    background:#111;
+    color:#00ff99;
+    padding:20px;
+    border-radius:10px;
+    overflow:auto;
+
+}
+
+
+
+button{
+
+    background:#243b55;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:20px;
+    cursor:pointer;
+    margin-top:10px;
+
+}
+
+
+
+button:hover{
+
+    background:#00c6ff;
+    color:black;
+
+}
+
+
+
+.navigation{
+
+    text-align:center;
+    margin:40px;
+
+}
+
+
+
+.navigation a{
+
+    text-decoration:none;
+    background:#00c6ff;
+    color:black;
+    padding:12px 25px;
+    border-radius:25px;
+    margin:10px;
+    font-weight:bold;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<header>
+
+C Structures Programs
+
+</header>
+
+
+
+
+
+<div class="container">
+
+
+
+
+
+<div class="program">
+
+<h2>1. Student Record Using Structure</h2>
+
+
+<pre id="code1">
+#include &lt;stdio.h&gt;
+
+
+struct Student
+{
+    int roll;
+    char name[20];
+    float marks;
+};
+
+
+
+int main()
+{
+
+    struct Student s;
+
+
+
+    printf("Enter Roll No: ");
+    scanf("%d",&s.roll);
+
+
+    printf("Enter Name: ");
+    scanf("%s",s.name);
+
+
+    printf("Enter Marks: ");
+    scanf("%f",&s.marks);
+
+
+
+    printf("\nStudent Details\n");
+
+    printf("Roll: %d\n",s.roll);
+
+    printf("Name: %s\n",s.name);
+
+    printf("Marks: %.2f",s.marks);
+
+
+
+    return 0;
+
+}
+</pre>
+
+
+<button onclick="copyCode('code1')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="program">
+
+<h2>2. Employee Record Using Structure</h2>
+
+
+<pre id="code2">
+#include &lt;stdio.h&gt;
+
+
+struct Employee
+{
+
+    int id;
+
+    char name[20];
+
+    float salary;
+
+};
+
+
+
+int main()
+{
+
+    struct Employee e;
+
+
+
+    printf("Enter ID: ");
+    scanf("%d",&e.id);
+
+
+
+    printf("Enter Name: ");
+    scanf("%s",e.name);
+
+
+
+    printf("Enter Salary: ");
+    scanf("%f",&e.salary);
+
+
+
+    printf("\nEmployee Details\n");
+
+
+    printf("ID: %d\n",e.id);
+
+    printf("Name: %s\n",e.name);
+
+    printf("Salary: %.2f",e.salary);
+
+
+
+    return 0;
+
+}
+</pre>
+
+
+<button onclick="copyCode('code2')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="program">
+
+<h2>3. Array of Structures</h2>
+
+
+<pre id="code3">
+#include &lt;stdio.h&gt;
+
+
+struct Student
+{
+
+    int roll;
+
+    float marks;
+
+};
+
+
+
+int main()
+{
+
+    struct Student s[3];
+
+
+    int i;
+
+
+
+    for(i=0;i<3;i++)
+    {
+
+        printf("Enter Roll: ");
+
+        scanf("%d",&s[i].roll);
+
+
+
+        printf("Enter Marks: ");
+
+        scanf("%f",&s[i].marks);
+
+    }
+
+
+
+
+    printf("\nRecords\n");
+
+
+
+    for(i=0;i<3;i++)
+    {
+
+        printf("%d %.2f\n",
+        s[i].roll,
+        s[i].marks);
+
+    }
+
+
+
+    return 0;
+
+}
+</pre>
+
+
+<button onclick="copyCode('code3')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="program">
+
+<h2>4. Nested Structure Example</h2>
+
+
+<pre id="code4">
+#include &lt;stdio.h&gt;
+
+
+struct Address
+{
+
+    char city[20];
+
+};
+
+
+
+struct Student
+{
+
+    int roll;
+
+    struct Address add;
+
+};
+
+
+
+int main()
+{
+
+    struct Student s;
+
+
+    s.roll=1;
+
+
+    printf("Enter City: ");
+
+    scanf("%s",s.add.city);
+
+
+
+    printf("Roll: %d\n",s.roll);
+
+
+    printf("City: %s",s.add.city);
+
+
+
+    return 0;
+
+}
+</pre>
+
+
+<button onclick="copyCode('code4')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="program">
+
+<h2>5. Structure With Function</h2>
+
+
+<pre id="code5">
+#include &lt;stdio.h&gt;
+
+
+struct Student
+{
+
+    int roll;
+
+    float marks;
+
+};
+
+
+
+void display(struct Student s)
+{
+
+    printf("Roll = %d\n",s.roll);
+
+    printf("Marks = %.2f",s.marks);
+
+}
+
+
+
+int main()
+{
+
+    struct Student s={1,90.5};
+
+
+
+    display(s);
+
+
+
+    return 0;
+
+}
+</pre>
+
+
+<button onclick="copyCode('code5')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="navigation">
+
+
+<a href="program-pointers.html">
+⬅ Previous
+</a>
+
+
+<a href="programs.html">
+🏠 Programs Home
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+
+<script>
+
+
+function copyCode(id)
+{
+
+let code=document.getElementById(id).innerText;
+
+navigator.clipboard.writeText(code);
+
+alert("Code Copied Successfully!");
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>
