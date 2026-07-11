@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>C Pointers MCQs</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#141e30,#243b55);
+    color:white;
+}
+
+
+header{
+    background:#00c6ff;
+    color:black;
+    padding:25px;
+    text-align:center;
+    font-size:32px;
+    font-weight:bold;
+}
+
+
+.container{
+    width:85%;
+    margin:30px auto;
+}
+
+
+.mcq{
+
+    background:white;
+    color:black;
+    padding:20px;
+    margin:20px 0;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.4);
+
+}
+
+
+.mcq h3{
+    color:#243b55;
+    margin-bottom:15px;
+}
+
+
+.option{
+
+    background:#f1f1f1;
+    padding:10px;
+    margin:8px 0;
+    border-radius:8px;
+
+}
+
+
+.option:hover{
+
+    background:#00c6ff;
+    color:white;
+
+}
+
+
+button{
+
+    margin-top:10px;
+    background:#243b55;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:20px;
+    cursor:pointer;
+
+}
+
+
+button:hover{
+
+    background:#00c6ff;
+    color:black;
+
+}
+
+
+.answer{
+
+    display:none;
+    margin-top:10px;
+    color:green;
+    font-weight:bold;
+
+}
+
+
+.navigation{
+
+    text-align:center;
+    margin:40px;
+
+}
+
+
+.navigation a{
+
+    text-decoration:none;
+    background:#00c6ff;
+    color:black;
+    padding:12px 25px;
+    border-radius:25px;
+    margin:10px;
+    font-weight:bold;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+C Pointers MCQs
+
+</header>
+
+
+
+<div class="container">
+
+
+
+<div class="mcq">
+
+<h3>1. What is a pointer in C?</h3>
+
+<div class="option">A) A variable that stores address of another variable</div>
+<div class="option">B) A normal variable</div>
+<div class="option">C) A function</div>
+<div class="option">D) A loop</div>
+
+<button onclick="showAnswer(1)">Show Answer</button>
+
+<p class="answer" id="ans1">
+Answer: A) A variable that stores address of another variable
+</p>
+
+</div>
+
+
+
+
+<div class="mcq">
+
+<h3>2. Which symbol is used to declare a pointer?</h3>
+
+<div class="option">A) &</div>
+<div class="option">B) *</div>
+<div class="option">C) #</div>
+<div class="option">D) @</div>
+
+<button onclick="showAnswer(2)">Show Answer</button>
+
+<p class="answer" id="ans2">
+Answer: B) *
+</p>
+
+</div>
+
+
+
+
+<div class="mcq">
+
+<h3>3. Which operator gives the address of a variable?</h3>
+
+<div class="option">A) *</div>
+<div class="option">B) &</div>
+<div class="option">C) %</div>
+<div class="option">D) #</div>
+
+<button onclick="showAnswer(3)">Show Answer</button>
+
+<p class="answer" id="ans3">
+Answer: B) &
+</p>
+
+</div>
+
+
+
+
+<div class="mcq">
+
+<h3>4. Which operator is used to access value stored at address?</h3>
+
+<div class="option">A) &</div>
+<div class="option">B) *</div>
+<div class="option">C) +</div>
+<div class="option">D) =</div>
+
+<button onclick="showAnswer(4)">Show Answer</button>
+
+<p class="answer" id="ans4">
+Answer: B) *
+</p>
+
+</div>
+
+
+
+
+<div class="mcq">
+
+<h3>5. A pointer stores?</h3>
+
+<div class="option">A) Value only</div>
+<div class="option">B) Address of variable</div>
+<div class="option">C) Data type</div>
+<div class="option">D) Function name</div>
+
+<button onclick="showAnswer(5)">Show Answer</button>
+
+<p class="answer" id="ans5">
+Answer: B) Address of variable
+</p>
+
+</div>
+
+
+
+
+<div class="mcq">
+
+<h3>6. What is a NULL pointer?</h3>
+
+<div class="option">A) Pointer with no valid address</div>
+<div class="option">B) Pointer with integer value</div>
+<div class="option">C) Pointer with string</div>
+<div class="option">D) Normal variable</div>
+
+<button onclick="showAnswer(6)">Show Answer</button>
+
+<p class="answer" id="ans6">
+Answer: A) Pointer with no valid address
+</p>
+
+</div>
+
+
+
+
+<div class="mcq">
+
+<h3>7. Which data type stores address of integer variable?</h3>
+
+<div class="option">A) int</div>
+<div class="option">B) int *</div>
+<div class="option">C) float</div>
+<div class="option">D) char</div>
+
+<button onclick="showAnswer(7)">Show Answer</button>
+
+<p class="answer" id="ans7">
+Answer: B) int *
+</p>
+
+</div>
+
+
+
+
+<div class="mcq">
+
+<h3>8. Pointers are mainly used for?</h3>
+
+<div class="option">A) Memory management</div>
+<div class="option">B) Printing text</div>
+<div class="option">C) Creating loops</div>
+<div class="option">D) Sorting only</div>
+
+<button onclick="showAnswer(8)">Show Answer</button>
+
+<p class="answer" id="ans8">
+Answer: A) Memory management
+</p>
+
+</div>
+
+
+
+
+<div class="mcq">
+
+<h3>9. Which function is used to allocate dynamic memory?</h3>
+
+<div class="option">A) printf()</div>
+<div class="option">B) malloc()</div>
+<div class="option">C) scanf()</div>
+<div class="option">D) main()</div>
+
+<button onclick="showAnswer(9)">Show Answer</button>
+
+<p class="answer" id="ans9">
+Answer: B) malloc()
+</p>
+
+</div>
+
+
+
+
+<div class="mcq">
+
+<h3>10. Pointer size depends on?</h3>
+
+<div class="option">A) Variable value</div>
+<div class="option">B) Computer architecture</div>
+<div class="option">C) Variable name</div>
+<div class="option">D) Data stored</div>
+
+<button onclick="showAnswer(10)">Show Answer</button>
+
+<p class="answer" id="ans10">
+Answer: B) Computer architecture
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+<div class="navigation">
+
+<a href="mcq-functions.html">
+⬅ Previous
+</a>
+
+
+<a href="mcq-structures.html">
+Next Chapter ➡
+</a>
+
+
+</div>
+
+
+
+
+<script>
+
+function showAnswer(num)
+{
+
+let ans=document.getElementById("ans"+num);
+
+if(ans.style.display=="block")
+{
+    ans.style.display="none";
+}
+
+else
+{
+    ans.style.display="block";
+}
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>

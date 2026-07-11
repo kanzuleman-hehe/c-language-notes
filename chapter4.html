@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 4 - Input & Output</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f4f7fc;
+}
+
+header{
+background:linear-gradient(135deg,#0ea5e9,#2563eb);
+color:white;
+text-align:center;
+padding:50px;
+}
+
+header h1{
+font-size:50px;
+}
+
+.creator{
+font-size:24px;
+font-weight:bold;
+margin-top:15px;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:40px auto;
+}
+
+.card{
+background:white;
+padding:30px;
+margin-bottom:25px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.card h2{
+color:#2563eb;
+margin-bottom:15px;
+}
+
+.card p{
+line-height:1.8;
+font-size:18px;
+}
+
+.code{
+background:#0f172a;
+color:#38bdf8;
+padding:20px;
+border-radius:15px;
+margin-top:15px;
+overflow:auto;
+font-family:Consolas;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+table th{
+background:#2563eb;
+color:white;
+padding:12px;
+}
+
+table td{
+padding:12px;
+border:1px solid #ddd;
+text-align:center;
+}
+
+.btns{
+display:flex;
+justify-content:space-between;
+margin-top:40px;
+}
+
+.btn{
+background:#2563eb;
+color:white;
+text-decoration:none;
+padding:12px 25px;
+border-radius:10px;
+font-weight:bold;
+}
+
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:50px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>Chapter 4</h1>
+<h2>Input & Output in C</h2>
+
+<div class="creator">
+✨ WEBSITE MADE BY KANZUL EMAN 😉 ✨
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>What is Input & Output?</h2>
+
+<p>
+
+Input means taking data from the user.
+
+Output means displaying data to the screen.
+
+In C Language:
+
+printf() → Output Function
+
+scanf() → Input Function
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>printf() Function</h2>
+
+<p>
+
+printf() is used to display output on the screen.
+
+</p>
+
+<div class="code">
+
+#include&lt;stdio.h&gt;
+
+int main()
+{
+printf("Welcome To C Language");
+
+return 0;
+}
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>scanf() Function</h2>
+
+<p>
+
+scanf() is used to take input from the user.
+
+</p>
+
+<div class="code">
+
+#include&lt;stdio.h&gt;
+
+int main()
+{
+int age;
+
+scanf("%d",&age);
+
+printf("%d",age);
+
+return 0;
+}
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Format Specifiers</h2>
+
+<table>
+
+<tr>
+<th>Specifier</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td>%d</td>
+<td>Integer</td>
+</tr>
+
+<tr>
+<td>%f</td>
+<td>Float</td>
+</tr>
+
+<tr>
+<td>%c</td>
+<td>Character</td>
+</tr>
+
+<tr>
+<td>%s</td>
+<td>String</td>
+</tr>
+
+<tr>
+<td>%lf</td>
+<td>Double</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h2>Example Program</h2>
+
+<div class="code">
+
+#include&lt;stdio.h&gt;
+
+int main()
+{
+char name[20];
+int age;
+
+printf("Enter Name: ");
+scanf("%s",name);
+
+printf("Enter Age: ");
+scanf("%d",&age);
+
+printf("Name = %s\\n",name);
+printf("Age = %d",age);
+
+return 0;
+}
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>🚀 Advanced Knowledge Corner</h2>
+
+<p>
+
+scanf() stores data directly into memory.
+
+The symbol & is called Address Operator.
+
+Example:
+
+</p>
+
+<div class="code">
+
+scanf("%d",&age);
+
+</div>
+
+<p>
+
+&age means:
+
+"Store the entered value at the memory address of age."
+
+This concept becomes very important when learning pointers.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Common Mistakes</h2>
+
+<ul>
+
+<li>Forgetting & in scanf()</li>
+
+<li>Using wrong format specifier</li>
+
+<li>Using %d for float values</li>
+
+<li>Misspelling printf() or scanf()</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Interview Questions</h2>
+
+<p>
+
+Q1: Difference between printf() and scanf()?
+
+<br><br>
+
+printf() → Displays output
+
+scanf() → Takes input
+
+<br><br>
+
+Q2: Why is & used in scanf()?
+
+<br><br>
+
+Because scanf needs the variable's memory address.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>MCQs</h2>
+
+<p>
+
+1. Which function is used for output?
+
+<br><br>
+
+A) scanf()
+
+<br>
+
+B) printf()
+
+<br>
+
+C) gets()
+
+<br>
+
+D) put()
+
+<br><br>
+
+Answer: B
+
+</p>
+
+<hr><br>
+
+<p>
+
+2. Which symbol is used before variable in scanf()?
+
+<br><br>
+
+A) *
+
+<br>
+
+B) %
+
+<br>
+
+C) &
+
+<br>
+
+D) #
+
+<br><br>
+
+Answer: C
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Practice Questions</h2>
+
+<ol>
+
+<li>Input and display your name.</li>
+
+<li>Input two numbers and display their sum.</li>
+
+<li>Input age and display it.</li>
+
+<li>Input marks and display percentage.</li>
+
+</ol>
+
+</div>
+
+<div class="btns">
+
+<a href="chapter3.html" class="btn">
+⬅ Previous
+</a>
+
+<a href="chapter5.html" class="btn">
+Next ➡
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+💖 Learn C Easily | Website Made By Kanzul Eman 😉
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>C Loops MCQs</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#141e30,#243b55);
+    color:white;
+}
+
+
+header{
+    background:#00c6ff;
+    color:black;
+    padding:25px;
+    text-align:center;
+    font-size:32px;
+    font-weight:bold;
+}
+
+
+.container{
+    width:85%;
+    margin:30px auto;
+}
+
+
+.mcq{
+
+    background:white;
+    color:black;
+    padding:20px;
+    margin:20px 0;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.4);
+
+}
+
+
+.mcq h3{
+    color:#243b55;
+    margin-bottom:15px;
+}
+
+
+.option{
+
+    background:#f1f1f1;
+    padding:10px;
+    margin:8px 0;
+    border-radius:8px;
+
+}
+
+
+.option:hover{
+
+    background:#00c6ff;
+    color:white;
+
+}
+
+
+button{
+
+    margin-top:10px;
+    background:#243b55;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:20px;
+    cursor:pointer;
+
+}
+
+
+button:hover{
+
+    background:#00c6ff;
+    color:black;
+
+}
+
+
+.answer{
+
+    display:none;
+    margin-top:10px;
+    color:green;
+    font-weight:bold;
+
+}
+
+
+.navigation{
+
+    text-align:center;
+    margin:40px;
+
+}
+
+
+.navigation a{
+
+    text-decoration:none;
+    background:#00c6ff;
+    color:black;
+    padding:12px 25px;
+    border-radius:25px;
+    margin:10px;
+    font-weight:bold;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+C Loops MCQs
+
+</header>
+
+
+
+<div class="container">
+
+
+
+<div class="mcq">
+
+<h3>1. Which loop is used when number of iterations is known?</h3>
+
+<div class="option">A) while loop</div>
+<div class="option">B) do while loop</div>
+<div class="option">C) for loop</div>
+<div class="option">D) switch</div>
+
+<button onclick="showAnswer(1)">Show Answer</button>
+
+<p class="answer" id="ans1">
+Answer: C) for loop
+</p>
+
+</div>
+
+
+
+
+<div class="mcq">
+
+<h3>2. Which loop executes at least one time?</h3>
+
+<div class="option">A) for loop</div>
+<div class="option">B) while loop</div>
+<div class="option">C) do while loop</div>
+<div class="option">D) nested loop</div>
+
+<button onclick="showAnswer(2)">Show Answer</button>
+
+<p class="answer" id="ans2">
+Answer: C) do while loop
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>3. Which keyword is used to exit from a loop?</h3>
+
+<div class="option">A) stop</div>
+<div class="option">B) break</div>
+<div class="option">C) exitloop</div>
+<div class="option">D) end</div>
+
+<button onclick="showAnswer(3)">Show Answer</button>
+
+<p class="answer" id="ans3">
+Answer: B) break
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>4. Which keyword skips the current iteration?</h3>
+
+<div class="option">A) skip</div>
+<div class="option">B) continue</div>
+<div class="option">C) pass</div>
+<div class="option">D) next</div>
+
+<button onclick="showAnswer(4)">Show Answer</button>
+
+<p class="answer" id="ans4">
+Answer: B) continue
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>5. Which loop checks condition before execution?</h3>
+
+<div class="option">A) while loop</div>
+<div class="option">B) do while loop</div>
+<div class="option">C) switch</div>
+<div class="option">D) function</div>
+
+<button onclick="showAnswer(5)">Show Answer</button>
+
+<p class="answer" id="ans5">
+Answer: A) while loop
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>6. The three parts of for loop are initialization, condition and?</h3>
+
+<div class="option">A) output</div>
+<div class="option">B) increment/decrement</div>
+<div class="option">C) input</div>
+<div class="option">D) return</div>
+
+<button onclick="showAnswer(6)">Show Answer</button>
+
+<p class="answer" id="ans6">
+Answer: B) increment/decrement
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>7. A loop inside another loop is called?</h3>
+
+<div class="option">A) Infinite loop</div>
+<div class="option">B) Nested loop</div>
+<div class="option">C) Double loop</div>
+<div class="option">D) Reverse loop</div>
+
+<button onclick="showAnswer(7)">Show Answer</button>
+
+<p class="answer" id="ans7">
+Answer: B) Nested loop
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>8. What happens if loop condition never becomes false?</h3>
+
+<div class="option">A) Program stops</div>
+<div class="option">B) Infinite loop occurs</div>
+<div class="option">C) Error occurs</div>
+<div class="option">D) Nothing</div>
+
+<button onclick="showAnswer(8)">Show Answer</button>
+
+<p class="answer" id="ans8">
+Answer: B) Infinite loop occurs
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>9. Which loop is also called exit controlled loop?</h3>
+
+<div class="option">A) for</div>
+<div class="option">B) while</div>
+<div class="option">C) do while</div>
+<div class="option">D) nested</div>
+
+<button onclick="showAnswer(9)">Show Answer</button>
+
+<p class="answer" id="ans9">
+Answer: C) do while
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>10. Which statement can create an empty loop body?</h3>
+
+<div class="option">A) for(;;)</div>
+<div class="option">B) if()</div>
+<div class="option">C) switch()</div>
+<div class="option">D) function()</div>
+
+<button onclick="showAnswer(10)">Show Answer</button>
+
+<p class="answer" id="ans10">
+Answer: A) for(;;)
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+<div class="navigation">
+
+<a href="mcq-ifelse.html">
+⬅ Previous
+</a>
+
+
+<a href="mcq-arrays.html">
+Next Chapter ➡
+</a>
+
+
+</div>
+
+
+
+
+<script>
+
+function showAnswer(num)
+{
+
+let ans=document.getElementById("ans"+num);
+
+if(ans.style.display=="block")
+{
+    ans.style.display="none";
+}
+else
+{
+    ans.style.display="block";
+}
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>

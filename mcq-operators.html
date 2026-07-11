@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>C Operators MCQs</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#141e30,#243b55);
+    color:white;
+}
+
+
+header{
+    background:#00c6ff;
+    color:black;
+    padding:25px;
+    text-align:center;
+    font-size:32px;
+    font-weight:bold;
+}
+
+
+.container{
+    width:85%;
+    margin:30px auto;
+}
+
+
+.mcq{
+
+    background:white;
+    color:black;
+    padding:20px;
+    margin:20px 0;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.4);
+
+}
+
+
+.mcq h3{
+    color:#243b55;
+    margin-bottom:15px;
+}
+
+
+.option{
+
+    background:#f1f1f1;
+    padding:10px;
+    margin:8px 0;
+    border-radius:8px;
+
+}
+
+
+.option:hover{
+
+    background:#00c6ff;
+    color:white;
+
+}
+
+
+button{
+
+    margin-top:10px;
+    background:#243b55;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:20px;
+    cursor:pointer;
+
+}
+
+
+button:hover{
+
+    background:#00c6ff;
+    color:black;
+
+}
+
+
+.answer{
+
+    display:none;
+    margin-top:10px;
+    color:green;
+    font-weight:bold;
+
+}
+
+
+.navigation{
+
+    text-align:center;
+    margin:40px;
+
+}
+
+
+.navigation a{
+
+    text-decoration:none;
+    background:#00c6ff;
+    color:black;
+    padding:12px 25px;
+    border-radius:25px;
+    margin:10px;
+    font-weight:bold;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+C Operators MCQs
+
+</header>
+
+
+
+<div class="container">
+
+
+
+<div class="mcq">
+
+<h3>1. Which operator is used for addition in C?</h3>
+
+<div class="option">A) *</div>
+<div class="option">B) +</div>
+<div class="option">C) -</div>
+<div class="option">D) /</div>
+
+<button onclick="showAnswer(1)">Show Answer</button>
+
+<p class="answer" id="ans1">
+Answer: B) +
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>2. Which operator is used for multiplication?</h3>
+
+<div class="option">A) *</div>
+<div class="option">B) +</div>
+<div class="option">C) %</div>
+<div class="option">D) &</div>
+
+<button onclick="showAnswer(2)">Show Answer</button>
+
+<p class="answer" id="ans2">
+Answer: A) *
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>3. Which operator gives remainder after division?</h3>
+
+<div class="option">A) /</div>
+<div class="option">B) %</div>
+<div class="option">C) *</div>
+<div class="option">D) //</div>
+
+<button onclick="showAnswer(3)">Show Answer</button>
+
+<p class="answer" id="ans3">
+Answer: B) %
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>4. Which operator is used for comparison?</h3>
+
+<div class="option">A) Relational operator</div>
+<div class="option">B) Arithmetic operator</div>
+<div class="option">C) Assignment operator</div>
+<div class="option">D) Increment operator</div>
+
+<button onclick="showAnswer(4)">Show Answer</button>
+
+<p class="answer" id="ans4">
+Answer: A) Relational operator
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>5. Which symbol is used for assignment?</h3>
+
+<div class="option">A) ==</div>
+<div class="option">B) =</div>
+<div class="option">C) !=</div>
+<div class="option">D) >=</div>
+
+<button onclick="showAnswer(5)">Show Answer</button>
+
+<p class="answer" id="ans5">
+Answer: B) =
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>6. Which operator increases value by 1?</h3>
+
+<div class="option">A) --</div>
+<div class="option">B) ++</div>
+<div class="option">C) +=</div>
+<div class="option">D) **</div>
+
+<button onclick="showAnswer(6)">Show Answer</button>
+
+<p class="answer" id="ans6">
+Answer: B) ++
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>7. Which operator represents logical AND?</h3>
+
+<div class="option">A) ||</div>
+<div class="option">B) &&</div>
+<div class="option">C) !</div>
+<div class="option">D) &</div>
+
+<button onclick="showAnswer(7)">Show Answer</button>
+
+<p class="answer" id="ans7">
+Answer: B) &&
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>8. Which operator represents logical OR?</h3>
+
+<div class="option">A) ||</div>
+<div class="option">B) &&</div>
+<div class="option">C) !</div>
+<div class="option">D) ==</div>
+
+<button onclick="showAnswer(8)">Show Answer</button>
+
+<p class="answer" id="ans8">
+Answer: A) ||
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>9. Which operator is called NOT operator?</h3>
+
+<div class="option">A) &</div>
+<div class="option">B) !</div>
+<div class="option">C) %</div>
+<div class="option">D) *</div>
+
+<button onclick="showAnswer(9)">Show Answer</button>
+
+<p class="answer" id="ans9">
+Answer: B) !
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>10. Which operator is used to check equality?</h3>
+
+<div class="option">A) =</div>
+<div class="option">B) ==</div>
+<div class="option">C) +=</div>
+<div class="option">D) !=</div>
+
+<button onclick="showAnswer(10)">Show Answer</button>
+
+<p class="answer" id="ans10">
+Answer: B) ==
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+<div class="navigation">
+
+<a href="mcq-variables.html">
+⬅ Previous
+</a>
+
+
+<a href="mcq-ifelse.html">
+Next Chapter ➡
+</a>
+
+
+</div>
+
+
+
+
+<script>
+
+function showAnswer(num)
+{
+
+let ans=document.getElementById("ans"+num);
+
+if(ans.style.display=="block")
+{
+    ans.style.display="none";
+}
+else
+{
+    ans.style.display="block";
+}
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>

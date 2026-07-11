@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 11 - Structures & File Handling</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f4f7fc;
+}
+
+header{
+background:linear-gradient(135deg,#0f172a,#2563eb);
+padding:60px;
+text-align:center;
+color:white;
+}
+
+header h1{
+font-size:55px;
+}
+
+.creator{
+margin-top:20px;
+font-size:30px;
+font-weight:bold;
+background:rgba(255,255,255,.15);
+padding:12px 25px;
+border-radius:50px;
+display:inline-block;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+padding:40px 0;
+}
+
+.card{
+background:white;
+padding:30px;
+margin-bottom:25px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.card h2{
+color:#2563eb;
+margin-bottom:15px;
+}
+
+.card p{
+font-size:18px;
+line-height:1.8;
+}
+
+.code{
+background:#0f172a;
+color:#38bdf8;
+padding:20px;
+border-radius:15px;
+overflow:auto;
+margin-top:15px;
+font-family:Consolas;
+}
+
+.tip{
+background:#dbeafe;
+padding:15px;
+border-left:5px solid #2563eb;
+border-radius:10px;
+margin-top:15px;
+}
+
+.output{
+background:#dcfce7;
+padding:15px;
+border-left:5px solid green;
+border-radius:10px;
+margin-top:15px;
+}
+
+.warning{
+background:#fee2e2;
+padding:15px;
+border-left:5px solid red;
+border-radius:10px;
+margin-top:15px;
+}
+
+.btn{
+background:#2563eb;
+color:white;
+padding:12px 25px;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+}
+
+.btns{
+display:flex;
+justify-content:space-between;
+margin-top:40px;
+}
+
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:50px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Chapter 11 - Structures & File Handling</h1>
+
+<div class="creator">
+✨ WEBSITE MADE BY KANZUL EMAN 😉 ✨
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>What is a Structure?</h2>
+
+<p>
+
+A Structure is a user-defined data type that allows us to store different types of data under one name.
+
+</p>
+
+<div class="tip">
+
+💡 Structure can store int, float, char and other data types together.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Why Use Structures?</h2>
+
+<p>
+
+✔ Store Student Records
+
+<br><br>
+
+✔ Store Employee Information
+
+<br><br>
+
+✔ Store Product Details
+
+<br><br>
+
+✔ Organize Data Efficiently
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Structure Syntax</h2>
+
+<div class="code">
+
+struct Student
+{
+char name[50];
+int age;
+float cgpa;
+};
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Creating Structure Variables</h2>
+
+<div class="code">
+
+struct Student s1;
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Accessing Structure Members</h2>
+
+<div class="code">
+
+s1.age = 20;
+
+printf("%d",s1.age);
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Complete Structure Example</h2>
+
+<div class="code">
+
+#include<stdio.h>
+
+struct Student
+{
+char name[50];
+int age;
+float cgpa;
+};
+
+int main()
+{
+
+struct Student s1;
+
+s1.age=20;
+s1.cgpa=3.8;
+
+printf("%d\n",s1.age);
+printf("%.2f",s1.cgpa);
+
+return 0;
+
+}
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Input Structure Data</h2>
+
+<div class="code">
+
+struct Student s1;
+
+scanf("%s",s1.name);
+
+scanf("%d",&s1.age);
+
+scanf("%f",&s1.cgpa);
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Display Structure Data</h2>
+
+<div class="code">
+
+printf("%s",s1.name);
+
+printf("%d",s1.age);
+
+printf("%.2f",s1.cgpa);
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Array of Structures</h2>
+
+<p>
+
+Used when storing multiple records.
+
+</p>
+
+<div class="code">
+
+struct Student s[100];
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Example - Multiple Students</h2>
+
+<div class="code">
+
+struct Student s[3];
+
+for(int i=0;i<3;i++)
+{
+scanf("%s",s[i].name);
+}
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Nested Structures</h2>
+
+<div class="code">
+
+struct Address
+{
+char city[30];
+};
+
+struct Student
+{
+char name[30];
+struct Address add;
+};
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Access Nested Structure</h2>
+
+<div class="code">
+
+printf("%s",s1.add.city);
+
+</div>
+
+</div><div class="card">
+
+<h2>Structure Pointer</h2>
+
+<p>
+
+A pointer can also point to a structure.
+
+</p>
+
+<div class="code">
+
+struct Student
+{
+char name[30];
+int age;
+};
+
+struct Student s1;
+
+struct Student *ptr = &s1;
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Arrow Operator (->)</h2>
+
+<p>
+
+Used to access structure members through pointers.
+
+</p>
+
+<div class="code">
+
+ptr->age = 20;
+
+printf("%d",ptr->age);
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>What is File Handling?</h2>
+
+<p>
+
+File Handling allows data to be stored permanently in files.
+
+Without files, data is lost when the program closes.
+
+</p>
+
+<div class="tip">
+
+💡 File Handling is used in Student Management Systems, Banking Systems and Database Applications.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>File Pointer</h2>
+
+<div class="code">
+
+FILE *fp;
+
+</div>
+
+<p>
+
+FILE is a predefined structure used to manage files.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Opening a File - fopen()</h2>
+
+<div class="code">
+
+FILE *fp;
+
+fp = fopen("student.txt","w");
+
+</div>
+
+<p>
+
+"w" means Write Mode.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Closing a File - fclose()</h2>
+
+<div class="code">
+
+fclose(fp);
+
+</div>
+
+<p>
+
+Always close files after use.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Writing to File - fprintf()</h2>
+
+<div class="code">
+
+FILE *fp;
+
+fp = fopen("data.txt","w");
+
+fprintf(fp,"Hello World");
+
+fclose(fp);
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Reading from File - fscanf()</h2>
+
+<div class="code">
+
+FILE *fp;
+
+char name[50];
+
+fp = fopen("data.txt","r");
+
+fscanf(fp,"%s",name);
+
+printf("%s",name);
+
+fclose(fp);
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>File Modes</h2>
+
+<div class="code">
+
+r   = Read
+
+w   = Write
+
+a   = Append
+
+r+  = Read + Write
+
+w+  = Write + Read
+
+a+  = Append + Read
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Append Mode Example</h2>
+
+<div class="code">
+
+FILE *fp;
+
+fp = fopen("data.txt","a");
+
+fprintf(fp,"New Record");
+
+fclose(fp);
+
+</div>
+
+<p>
+
+Append mode adds data at the end of the file.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Binary File Writing - fwrite()</h2>
+
+<div class="code">
+
+fwrite(&s1,
+sizeof(s1),
+1,
+fp);
+
+</div>
+
+<p>
+
+Used for writing structures directly into binary files.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Binary File Reading - fread()</h2>
+
+<div class="code">
+
+fread(&s1,
+sizeof(s1),
+1,
+fp);
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Student Record Example</h2>
+
+<div class="code">
+
+struct Student
+{
+char name[50];
+float cgpa;
+};
+
+FILE *fp;
+
+fp = fopen("students.txt","w");
+
+fprintf(fp,
+"Ahmed 3.90");
+
+fclose(fp);
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>🚀 Advanced Knowledge Corner</h2>
+
+<p>
+
+Most professional software stores data using files.
+
+Examples:
+
+</p>
+
+<ul style="font-size:18px;line-height:2;margin-left:30px;">
+
+<li>Bank Accounts</li>
+
+<li>Hospital Records</li>
+
+<li>University Databases</li>
+
+<li>Payroll Systems</li>
+
+<li>Library Systems</li>
+
+<li>Inventory Systems</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Common Mistakes</h2>
+
+<div class="warning">
+
+❌ Forgetting to close files.
+
+</div>
+
+<div class="warning">
+
+❌ Opening file in wrong mode.
+
+</div>
+
+<div class="warning">
+
+❌ Reading from a file that does not exist.
+
+</div>
+
+<div class="warning">
+
+❌ Using structure members incorrectly.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Interview Questions</h2>
+
+<p>
+
+1. What is a Structure?
+
+<br><br>
+
+2. Why do we use Structures?
+
+<br><br>
+
+3. What is an Array of Structures?
+
+<br><br>
+
+4. What is a Nested Structure?
+
+<br><br>
+
+5. What is File Handling?
+
+<br><br>
+
+6. Difference between text and binary files?
+
+<br><br>
+
+7. What does fopen() do?
+
+<br><br>
+
+8. What does fclose() do?
+
+<br><br>
+
+9. Difference between fprintf() and fwrite()?
+
+<br><br>
+
+10. Difference between fscanf() and fread()?
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>MCQs</h2>
+
+<p>
+
+1. Which function opens a file?
+
+<br><br>
+
+A) open()
+
+<br>
+
+B) fopen()
+
+<br>
+
+C) fileopen()
+
+<br>
+
+D) createfile()
+
+<br><br>
+
+✅ Answer: B
+
+</p>
+
+<hr><br>
+
+<p>
+
+2. Which function closes a file?
+
+<br><br>
+
+A) fclose()
+
+<br>
+
+B) fileclose()
+
+<br>
+
+C) close()
+
+<br>
+
+D) endfile()
+
+<br><br>
+
+✅ Answer: A
+
+</p>
+
+<hr><br>
+
+<p>
+
+3. Which mode is used for appending data?
+
+<br><br>
+
+A) r
+
+<br>
+
+B) w
+
+<br>
+
+C) a
+
+<br>
+
+D) r+
+
+<br><br>
+
+✅ Answer: C
+
+</p>
+
+<hr><br>
+
+<p>
+
+4. Which operator accesses structure members using a pointer?
+
+<br><br>
+
+A) .
+
+<br>
+
+B) ::
+
+<br>
+
+C) ->
+
+<br>
+
+D) &
+
+<br><br>
+
+✅ Answer: C
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Practice Questions</h2>
+
+<ol>
+
+<li>Create a Student structure.</li>
+<li>Create an Employee structure.</li>
+<li>Input student data.</li>
+<li>Display student data.</li>
+<li>Create array of structures.</li>
+<li>Store 10 student records.</li>
+<li>Find highest CGPA student.</li>
+<li>Find lowest CGPA student.</li>
+<li>Search student by name.</li>
+<li>Update student record.</li>
+<li>Create nested structure.</li>
+<li>Use structure pointers.</li>
+<li>Create a file.</li>
+<li>Write data into a file.</li>
+<li>Read data from a file.</li>
+<li>Append records into file.</li>
+<li>Store student records in file.</li>
+<li>Read student records from file.</li>
+<li>Use fwrite() with structures.</li>
+<li>Use fread() with structures.</li>
+<li>Create mini Student Management System.</li>
+<li>Create Library Management System.</li>
+<li>Create Employee Record System.</li>
+<li>Create Inventory Management System.</li>
+<li>Create University Record System.</li>
+</ol>
+
+</div>
+
+<div class="btns">
+
+<a href="chapter10.html" class="btn">
+⬅ Previous
+</a>
+
+<a href="exercise-solutions.html" class="btn">
+Solutions ➡
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+💖 Learn C Easily | Website Made By Kanzul Eman 😉
+<br><br>
+🏆 Complete C Programming Course From Beginner To Advanced
+
+</footer>
+
+</body>
+</html>

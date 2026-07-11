@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 2 - Variables & Data Types</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f5f7fb;
+}
+
+header{
+background:linear-gradient(135deg,#2563eb,#06b6d4);
+color:white;
+text-align:center;
+padding:50px;
+}
+
+header h1{
+font-size:50px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+margin-bottom:25px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.card h2{
+color:#2563eb;
+margin-bottom:15px;
+}
+
+.card p{
+line-height:1.8;
+font-size:18px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+table th{
+background:#2563eb;
+color:white;
+padding:12px;
+}
+
+table td{
+padding:12px;
+border:1px solid #ddd;
+text-align:center;
+}
+
+.code{
+background:#0f172a;
+color:#38bdf8;
+padding:20px;
+border-radius:15px;
+margin-top:15px;
+overflow:auto;
+font-family:Consolas;
+}
+
+ul{
+margin-left:25px;
+line-height:2;
+}
+
+.btns{
+display:flex;
+justify-content:space-between;
+margin-top:40px;
+}
+
+.btn{
+text-decoration:none;
+background:#2563eb;
+color:white;
+padding:12px 25px;
+border-radius:10px;
+}
+
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+
+<h1>Chapter 2</h1>
+<h2>Variables & Data Types</h2>
+
+<p>
+✨ Website Made By Kanzul Eman 😉 ✨
+</p>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>What is a Variable?</h2>
+
+<p>
+
+A variable is a named memory location used to store data.
+
+Example:
+
+Age = 20
+
+Here Age is a variable and 20 is its value.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Rules for Naming Variables</h2>
+
+<ul>
+
+<li>Must start with a letter or underscore (_)</li>
+
+<li>Cannot start with a number</li>
+
+<li>No spaces allowed</li>
+
+<li>No special characters except underscore</li>
+
+<li>Keywords cannot be used as variable names</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Data Types in C</h2>
+
+<table>
+
+<tr>
+<th>Data Type</th>
+<th>Used For</th>
+<th>Example</th>
+</tr>
+
+<tr>
+<td>int</td>
+<td>Integer Values</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>float</td>
+<td>Decimal Values</td>
+<td>3.14</td>
+</tr>
+
+<tr>
+<td>char</td>
+<td>Single Character</td>
+<td>A</td>
+</tr>
+
+<tr>
+<td>double</td>
+<td>Large Decimal Values</td>
+<td>12.345678</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h2>Declaring Variables</h2>
+
+<div class="code">
+
+int age = 20;
+
+float cgpa = 3.85;
+
+char grade = 'A';
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Input From User</h2>
+
+<div class="code">
+
+#include<stdio.h>
+
+int main()
+{
+int age;
+
+printf("Enter Age: ");
+
+scanf("%d",&age);
+
+printf("Age = %d",age);
+
+return 0;
+}
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Output</h2>
+
+<div class="code">
+
+Enter Age: 20
+
+Age = 20
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Format Specifiers</h2>
+
+<table>
+
+<tr>
+<th>Specifier</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td>%d</td>
+<td>Integer</td>
+</tr>
+
+<tr>
+<td>%f</td>
+<td>Float</td>
+</tr>
+
+<tr>
+<td>%c</td>
+<td>Character</td>
+</tr>
+
+<tr>
+<td>%lf</td>
+<td>Double</td>
+</tr>
+
+<tr>
+<td>%s</td>
+<td>String</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h2>Important Interview Questions</h2>
+
+<p>
+
+Q1: What is a Variable?
+
+<br><br>
+
+A variable is a named memory location used to store data.
+
+<br><br>
+
+Q2: Which data type stores decimal numbers?
+
+<br><br>
+
+Answer: float or double
+
+</p>
+
+</div>
+
+<div class="btns">
+
+<a href="chapter1.html" class="btn">
+⬅ Previous
+</a>
+
+<a href="chapter3.html" class="btn">
+Next ➡
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+💖 Learn C Easily | Website Made By Kanzul Eman 😉
+
+</footer>
+
+</body>
+</html>

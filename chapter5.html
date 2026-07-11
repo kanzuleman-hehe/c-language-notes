@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 5 - Conditional Statements</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f4f7fc;
+}
+
+header{
+background:linear-gradient(135deg,#2563eb,#06b6d4);
+padding:50px;
+text-align:center;
+color:white;
+}
+
+header h1{
+font-size:50px;
+}
+
+.creator{
+margin-top:15px;
+font-size:24px;
+font-weight:bold;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:40px auto;
+}
+
+.card{
+background:white;
+padding:30px;
+margin-bottom:25px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.card h2{
+color:#2563eb;
+margin-bottom:15px;
+}
+
+.card p{
+line-height:1.8;
+font-size:18px;
+}
+
+.code{
+background:#0f172a;
+color:#38bdf8;
+padding:20px;
+border-radius:15px;
+margin-top:15px;
+font-family:Consolas;
+overflow:auto;
+}
+
+.output{
+background:#dcfce7;
+padding:15px;
+border-left:5px solid green;
+margin-top:15px;
+border-radius:10px;
+}
+
+.tip{
+background:#dbeafe;
+padding:15px;
+border-left:5px solid #2563eb;
+margin-top:15px;
+border-radius:10px;
+}
+
+.warning{
+background:#fee2e2;
+padding:15px;
+border-left:5px solid red;
+margin-top:15px;
+border-radius:10px;
+}
+
+.btns{
+display:flex;
+justify-content:space-between;
+margin-top:40px;
+}
+
+.btn{
+background:#2563eb;
+color:white;
+text-decoration:none;
+padding:12px 25px;
+border-radius:10px;
+font-weight:bold;
+}
+
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:50px;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+
+<h1>Chapter 5</h1>
+
+<h2>Conditional Statements in C</h2>
+
+<div class="creator">
+✨ WEBSITE MADE BY KANZUL EMAN 😉 ✨
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>What are Conditional Statements?</h2>
+
+<p>
+
+Conditional Statements allow a program to make decisions based on conditions.
+
+If the condition is true, one block executes.
+If false, another block executes.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>1. if Statement</h2>
+
+<div class="code">
+if(age >= 18)
+{
+    printf("Eligible");
+}
+</div>
+
+<div class="output">
+Output: Eligible
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>2. if-else Statement</h2>
+
+<div class="code">
+if(age >= 18)
+{
+    printf("Adult");
+}
+else
+{
+    printf("Minor");
+}
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>3. else-if Ladder</h2>
+
+<div class="code">
+if(marks >= 80)
+{
+    printf("A Grade");
+}
+else if(marks >= 70)
+{
+    printf("B Grade");
+}
+else
+{
+    printf("C Grade");
+}
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>4. Nested if</h2>
+
+<div class="code">
+if(age >= 18)
+{
+    if(citizen == 1)
+    {
+        printf("Eligible To Vote");
+    }
+}
+</div>
+
+<p>
+Nested if means an if statement inside another if statement.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>5. switch Statement</h2>
+
+<div class="code">
+switch(choice)
+{
+case 1:
+    printf("Tea");
+    break;
+
+case 2:
+    printf("Coffee");
+    break;
+
+default:
+    printf("Invalid Choice");
+}
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>🚀 Advanced Knowledge Corner</h2>
+
+<p>
+
+Many beginners write:
+
+</p>
+
+<div class="code">
+if(x = 5)
+</div>
+
+<div class="warning">
+⚠ Wrong! This assigns 5 to x.
+</div>
+
+<div class="code">
+if(x == 5)
+</div>
+
+<div class="tip">
+✅ Correct! This compares x with 5.
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Real World Example</h2>
+
+<div class="code">
+if(balance >= 500)
+{
+    printf("Transaction Approved");
+}
+else
+{
+    printf("Insufficient Balance");
+}
+</div>
+
+<p>
+
+Banks, ATMs and online payment systems use conditions like this every day.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Interview Questions</h2>
+
+<p>
+
+<b>Q1:</b> Difference between if and switch?
+
+<br><br>
+
+<b>Answer:</b>
+
+if can check ranges and complex conditions.
+
+switch checks exact values only.
+
+<br><br>
+
+<b>Q2:</b> What is Nested if?
+
+<br><br>
+
+An if statement inside another if statement.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>MCQs</h2>
+
+<p>
+
+1. Which operator is used for comparison?
+
+<br><br>
+
+A) =
+
+<br>
+
+B) ==
+
+<br>
+
+C) %
+
+<br>
+
+D) /
+
+<br><br>
+
+Answer: B
+
+</p>
+
+<hr><br>
+
+<p>
+
+2. Which statement is best for menu-driven programs?
+
+<br><br>
+
+A) if
+
+<br>
+
+B) switch
+
+<br>
+
+C) loop
+
+<br>
+
+D) array
+
+<br><br>
+
+Answer: B
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Practice Questions</h2>
+
+<ol>
+
+<li>Check whether a number is positive or negative.</li>
+
+<li>Check whether a number is even or odd.</li>
+
+<li>Find the largest of two numbers.</li>
+
+<li>Create a calculator using switch statement.</li>
+
+<li>Display grade based on marks.</li>
+
+</ol>
+
+</div>
+
+<div class="btns">
+
+<a href="chapter4.html" class="btn">
+⬅ Previous
+</a>
+
+<a href="chapter6.html" class="btn">
+Next ➡
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+💖 Learn C Easily | Website Made By Kanzul Eman 😉
+
+</footer>
+
+</body>
+</html>

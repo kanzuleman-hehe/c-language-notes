@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 3 - Operators in C</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f4f7fc;
+}
+
+/* HEADER */
+
+header{
+background:linear-gradient(135deg,#2563eb,#06b6d4);
+color:white;
+text-align:center;
+padding:50px;
+}
+
+header h1{
+font-size:50px;
+margin-bottom:10px;
+}
+
+.creator{
+font-size:24px;
+font-weight:bold;
+}
+
+/* CONTAINER */
+
+.container{
+width:90%;
+max-width:1200px;
+margin:40px auto;
+}
+
+/* CARD */
+
+.card{
+background:white;
+padding:30px;
+margin-bottom:25px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card h2{
+color:#2563eb;
+margin-bottom:15px;
+}
+
+.card p{
+line-height:1.8;
+font-size:18px;
+}
+
+/* TABLE */
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+table th{
+background:#2563eb;
+color:white;
+padding:12px;
+}
+
+table td{
+padding:12px;
+border:1px solid #ddd;
+text-align:center;
+}
+
+/* CODE */
+
+.code{
+background:#0f172a;
+color:#38bdf8;
+padding:20px;
+border-radius:15px;
+font-family:Consolas;
+overflow:auto;
+margin-top:15px;
+}
+
+/* BUTTONS */
+
+.buttons{
+display:flex;
+justify-content:space-between;
+margin-top:40px;
+}
+
+.btn{
+background:#2563eb;
+color:white;
+padding:12px 25px;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:50px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Chapter 3</h1>
+
+<h2>Operators in C Language</h2>
+
+<br>
+
+<div class="creator">
+✨ WEBSITE MADE BY KANZUL EMAN 😉 ✨
+</div>
+
+</header>
+
+<div class="container">
+
+<!-- INTRODUCTION -->
+
+<div class="card">
+
+<h2>What is an Operator?</h2>
+
+<p>
+
+An Operator is a symbol that performs an operation on operands (values or variables).
+
+Example:
+
+5 + 3
+
+Here:
+
++ = Operator
+
+5 and 3 = Operands
+
+</p>
+
+</div>
+
+<!-- TYPES -->
+
+<div class="card">
+
+<h2>Types of Operators in C</h2>
+
+<table>
+
+<tr>
+<th>Operator Type</th>
+<th>Example</th>
+</tr>
+
+<tr>
+<td>Arithmetic</td>
+<td>+ - * / %</td>
+</tr>
+
+<tr>
+<td>Relational</td>
+<td>== != > < >= <=</td>
+</tr>
+
+<tr>
+<td>Logical</td>
+<td>&& || !</td>
+</tr>
+
+<tr>
+<td>Assignment</td>
+<td>= += -= *=</td>
+</tr>
+
+<tr>
+<td>Increment/Decrement</td>
+<td>++ --</td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- ARITHMETIC -->
+
+<div class="card">
+
+<h2>Arithmetic Operators</h2>
+
+<table>
+
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>+</td>
+<td>Addition</td>
+</tr>
+
+<tr>
+<td>-</td>
+<td>Subtraction</td>
+</tr>
+
+<tr>
+<td>*</td>
+<td>Multiplication</td>
+</tr>
+
+<tr>
+<td>/</td>
+<td>Division</td>
+</tr>
+
+<tr>
+<td>%</td>
+<td>Modulus</td>
+</tr>
+
+</table>
+
+<div class="code">
+
+#include&lt;stdio.h&gt;
+
+int main()
+{
+int a=10,b=5;
+
+printf("Addition = %d\n",a+b);
+printf("Subtraction = %d\n",a-b);
+printf("Multiplication = %d\n",a*b);
+printf("Division = %d\n",a/b);
+
+return 0;
+}
+
+</div>
+
+</div>
+
+<!-- RELATIONAL -->
+
+<div class="card">
+
+<h2>Relational Operators</h2>
+
+<p>
+
+Relational Operators compare two values.
+
+Result is either:
+
+1 = True
+
+0 = False
+
+</p>
+
+<div class="code">
+
+#include&lt;stdio.h&gt;
+
+int main()
+{
+int a=10,b=20;
+
+printf("%d",a<b);
+
+return 0;
+}
+
+</div>
+
+<p>
+
+Output:
+
+1
+
+Because 10 is less than 20.
+
+</p>
+
+</div>
+
+<!-- LOGICAL -->
+
+<div class="card">
+
+<h2>Logical Operators</h2>
+
+<table>
+
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td>&&</td>
+<td>AND</td>
+</tr>
+
+<tr>
+<td>||</td>
+<td>OR</td>
+</tr>
+
+<tr>
+<td>!</td>
+<td>NOT</td>
+</tr>
+
+</table>
+
+<div class="code">
+
+if(age >=18 && age <=60)
+
+{
+printf("Eligible");
+}
+
+</div>
+
+</div>
+
+<!-- ASSIGNMENT -->
+
+<div class="card">
+
+<h2>Assignment Operators</h2>
+
+<div class="code">
+
+int a=10;
+
+a+=5;
+
+printf("%d",a);
+
+</div>
+
+<p>
+
+Output = 15
+
+</p>
+
+</div>
+
+<!-- INCREMENT -->
+
+<div class="card">
+
+<h2>Increment & Decrement</h2>
+
+<div class="code">
+
+int x=5;
+
+x++;
+
+printf("%d",x);
+
+</div>
+
+<p>
+
+Output = 6
+
+</p>
+
+</div>
+
+<!-- ADVANCED -->
+
+<div class="card">
+
+<h2>🚀 Advanced Knowledge Corner</h2>
+
+<p>
+
+Operator Precedence decides which operator executes first.
+
+Example:
+
+</p>
+
+<div class="code">
+
+int result = 10 + 5 * 2;
+
+printf("%d",result);
+
+</div>
+
+<p>
+
+Output = 20
+
+Because multiplication (*) has higher precedence than addition (+).
+
+Calculation:
+
+5 × 2 = 10
+
+10 + 10 = 20
+
+</p>
+
+</div>
+
+<!-- COMMON ERRORS -->
+
+<div class="card">
+
+<h2>Common Mistakes</h2>
+
+<ul>
+
+<li>Using = instead of ==</li>
+
+<li>Forgetting operator precedence</li>
+
+<li>Division by zero</li>
+
+<li>Using wrong logical operators</li>
+
+</ul>
+
+</div>
+
+<!-- MCQS -->
+
+<div class="card">
+
+<h2>MCQs</h2>
+
+<p>
+
+1. Which operator is used for modulus?
+
+<br><br>
+
+A) /
+
+<br>
+
+B) %
+
+<br>
+
+C) *
+
+<br>
+
+D) +
+
+<br><br>
+
+Answer: B
+
+</p>
+
+<hr><br>
+
+<p>
+
+2. Which operator means AND?
+
+<br><br>
+
+A) ||
+
+<br>
+
+B) !
+
+<br>
+
+C) &&
+
+<br>
+
+D) %
+
+<br><br>
+
+Answer: C
+
+</p>
+
+</div>
+
+<!-- INTERVIEW -->
+
+<div class="card">
+
+<h2>Interview Questions</h2>
+
+<p>
+
+Q1: What is an Operator?
+
+<br><br>
+
+An operator is a symbol used to perform operations on operands.
+
+<br><br>
+
+Q2: Difference between = and == ?
+
+<br><br>
+
+= → Assignment Operator
+
+== → Comparison Operator
+
+</p>
+
+</div>
+
+<!-- PRACTICE -->
+
+<div class="card">
+
+<h2>Practice Questions</h2>
+
+<ol>
+
+<li>Write a program to add two numbers.</li>
+
+<li>Write a program to calculate remainder.</li>
+
+<li>Check whether one number is greater than another.</li>
+
+<li>Use logical AND operator in a program.</li>
+
+</ol>
+
+</div>
+
+<div class="buttons">
+
+<a href="chapter2.html" class="btn">
+⬅ Previous
+</a>
+
+<a href="chapter4.html" class="btn">
+Next ➡
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+💖 Learn C Easily | Website Made By Kanzul Eman 😉
+
+</footer>
+
+</body>
+</html>

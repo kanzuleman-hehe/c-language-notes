@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>C Structures MCQs</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#141e30,#243b55);
+    color:white;
+}
+
+
+header{
+    background:#00c6ff;
+    color:black;
+    padding:25px;
+    text-align:center;
+    font-size:32px;
+    font-weight:bold;
+}
+
+
+.container{
+    width:85%;
+    margin:30px auto;
+}
+
+
+.mcq{
+
+    background:white;
+    color:black;
+    padding:20px;
+    margin:20px 0;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.4);
+
+}
+
+
+.mcq h3{
+    color:#243b55;
+    margin-bottom:15px;
+}
+
+
+.option{
+
+    background:#f1f1f1;
+    padding:10px;
+    margin:8px 0;
+    border-radius:8px;
+
+}
+
+
+.option:hover{
+
+    background:#00c6ff;
+    color:white;
+
+}
+
+
+button{
+
+    margin-top:10px;
+    background:#243b55;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:20px;
+    cursor:pointer;
+
+}
+
+
+button:hover{
+
+    background:#00c6ff;
+    color:black;
+
+}
+
+
+.answer{
+
+    display:none;
+    margin-top:10px;
+    color:green;
+    font-weight:bold;
+
+}
+
+
+.navigation{
+
+    text-align:center;
+    margin:40px;
+
+}
+
+
+.navigation a{
+
+    text-decoration:none;
+    background:#00c6ff;
+    color:black;
+    padding:12px 25px;
+    border-radius:25px;
+    margin:10px;
+    font-weight:bold;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+C Structures MCQs
+
+</header>
+
+
+
+<div class="container">
+
+
+
+<div class="mcq">
+
+<h3>1. What is a structure in C?</h3>
+
+<div class="option">A) Collection of different data types</div>
+<div class="option">B) Collection of same data types</div>
+<div class="option">C) A loop</div>
+<div class="option">D) A function</div>
+
+<button onclick="showAnswer(1)">Show Answer</button>
+
+<p class="answer" id="ans1">
+Answer: A) Collection of different data types
+</p>
+
+</div>
+
+
+
+
+<div class="mcq">
+
+<h3>2. Which keyword is used to create a structure?</h3>
+
+<div class="option">A) struct</div>
+<div class="option">B) structure</div>
+<div class="option">C) class</div>
+<div class="option">D) record</div>
+
+<button onclick="showAnswer(2)">Show Answer</button>
+
+<p class="answer" id="ans2">
+Answer: A) struct
+</p>
+
+</div>
+
+
+
+
+<div class="mcq">
+
+<h3>3. Structure members are accessed using?</h3>
+
+<div class="option">A) :</div>
+<div class="option">B) . (dot operator)</div>
+<div class="option">C) #</div>
+<div class="option">D) *</div>
+
+<button onclick="showAnswer(3)">Show Answer</button>
+
+<p class="answer" id="ans3">
+Answer: B) . (dot operator)
+</p>
+
+</div>
+
+
+
+
+<div class="mcq">
+
+<h3>4. Structure is a ______ data type.</h3>
+
+<div class="option">A) Basic</div>
+<div class="option">B) User-defined</div>
+<div class="option">C) Floating</div>
+<div class="option">D) Integer</div>
+
+<button onclick="showAnswer(4)">Show Answer</button>
+
+<p class="answer" id="ans4">
+Answer: B) User-defined
+</p>
+
+</div>
+
+
+
+
+<div class="mcq">
+
+<h3>5. Which keyword is used to create an alias name?</h3>
+
+<div class="option">A) typedef</div>
+<div class="option">B) define</div>
+<div class="option">C) alias</div>
+<div class="option">D) name</div>
+
+<button onclick="showAnswer(5)">Show Answer</button>
+
+<p class="answer" id="ans5">
+Answer: A) typedef
+</p>
+
+</div>
+
+
+
+
+<div class="mcq">
+
+<h3>6. A structure can contain?</h3>
+
+<div class="option">A) Only int variables</div>
+<div class="option">B) Only characters</div>
+<div class="option">C) Different data types</div>
+<div class="option">D) Only functions</div>
+
+<button onclick="showAnswer(6)">Show Answer</button>
+
+<p class="answer" id="ans6">
+Answer: C) Different data types
+</p>
+
+</div>
+
+
+
+
+<div class="mcq">
+
+<h3>7. Which operator is used to access structure pointer members?</h3>
+
+<div class="option">A) .</div>
+<div class="option">B) -></div>
+<div class="option">C) *</div>
+<div class="option">D) &</div>
+
+<button onclick="showAnswer(7)">Show Answer</button>
+
+<p class="answer" id="ans7">
+Answer: B) ->
+</p>
+
+</div>
+
+
+
+
+<div class="mcq">
+
+<h3>8. Union stores?</h3>
+
+<div class="option">A) All members separately</div>
+<div class="option">B) One member at a time</div>
+<div class="option">C) Only integers</div>
+<div class="option">D) No data</div>
+
+<button onclick="showAnswer(8)">Show Answer</button>
+
+<p class="answer" id="ans8">
+Answer: B) One member at a time
+</p>
+
+</div>
+
+
+
+
+<div class="mcq">
+
+<h3>9. Main difference between structure and union?</h3>
+
+<div class="option">A) Memory allocation</div>
+<div class="option">B) Variable name</div>
+<div class="option">C) Data type</div>
+<div class="option">D) Syntax only</div>
+
+<button onclick="showAnswer(9)">Show Answer</button>
+
+<p class="answer" id="ans9">
+Answer: A) Memory allocation
+</p>
+
+</div>
+
+
+
+
+<div class="mcq">
+
+<h3>10. Which header file is required for standard C functions?</h3>
+
+<div class="option">A) stdio.h</div>
+<div class="option">B) structure.h</div>
+<div class="option">C) data.h</div>
+<div class="option">D) user.h</div>
+
+<button onclick="showAnswer(10)">Show Answer</button>
+
+<p class="answer" id="ans10">
+Answer: A) stdio.h
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+<div class="navigation">
+
+<a href="mcq-pointers.html">
+⬅ Previous
+</a>
+
+
+<a href="mcqs.html">
+🏠 MCQ Home
+</a>
+
+
+</div>
+
+
+
+
+<script>
+
+function showAnswer(num)
+{
+
+let ans=document.getElementById("ans"+num);
+
+if(ans.style.display=="block")
+{
+    ans.style.display="none";
+}
+
+else
+{
+    ans.style.display="block";
+}
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>

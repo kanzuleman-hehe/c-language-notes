@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 10 - Pointers in C</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f4f7fc;
+}
+
+header{
+background:linear-gradient(135deg,#dc2626,#7c3aed);
+padding:60px;
+text-align:center;
+color:white;
+}
+
+header h1{
+font-size:55px;
+}
+
+.creator{
+margin-top:20px;
+font-size:30px;
+font-weight:bold;
+background:rgba(255,255,255,.15);
+padding:12px 25px;
+border-radius:50px;
+display:inline-block;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+padding:40px 0;
+}
+
+.card{
+background:white;
+padding:30px;
+margin-bottom:25px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.card h2{
+color:#dc2626;
+margin-bottom:15px;
+}
+
+.card p{
+font-size:18px;
+line-height:1.8;
+}
+
+.code{
+background:#0f172a;
+color:#38bdf8;
+padding:20px;
+border-radius:15px;
+margin-top:15px;
+overflow:auto;
+font-family:Consolas;
+}
+
+.tip{
+background:#dbeafe;
+padding:15px;
+border-left:5px solid #2563eb;
+border-radius:10px;
+margin-top:15px;
+}
+
+.output{
+background:#dcfce7;
+padding:15px;
+border-left:5px solid green;
+border-radius:10px;
+margin-top:15px;
+}
+
+.warning{
+background:#fee2e2;
+padding:15px;
+border-left:5px solid red;
+border-radius:10px;
+margin-top:15px;
+}
+
+.memory{
+background:#f8fafc;
+padding:20px;
+border-radius:15px;
+margin-top:15px;
+font-family:Consolas;
+font-size:18px;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+
+<h1>Chapter 10 - Pointers in C</h1>
+
+<div class="creator">
+✨ WEBSITE MADE BY KANZUL EMAN 😉 ✨
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>What is a Pointer?</h2>
+
+<p>
+
+A Pointer is a variable that stores the memory address of another variable.
+
+Instead of storing a value directly, a pointer stores the location where the value exists.
+
+</p>
+
+<div class="tip">
+
+💡 Pointer = Address Holder
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Why Do We Use Pointers?</h2>
+
+<p>
+
+✔ Efficient Memory Usage
+
+<br><br>
+
+✔ Dynamic Memory Allocation
+
+<br><br>
+
+✔ Fast Array Processing
+
+<br><br>
+
+✔ Pass Data to Functions Efficiently
+
+<br><br>
+
+✔ Used in Data Structures
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Memory Concept</h2>
+
+<p>
+
+Every variable is stored at a memory address.
+
+</p>
+
+<div class="code">
+
+int age = 20;
+
+</div>
+
+<div class="memory">
+
+Value = 20
+
+Address = 1000 (Example)
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Address Operator (&)</h2>
+
+<p>
+
+The & operator returns the address of a variable.
+
+</p>
+
+<div class="code">
+
+int age = 20;
+
+printf("%p",&age);
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Pointer Declaration</h2>
+
+<div class="code">
+
+int *ptr;
+
+</div>
+
+<p>
+
+ptr is a pointer that can store the address of an integer variable.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Pointer Initialization</h2>
+
+<div class="code">
+
+int age = 20;
+
+int *ptr = &age;
+
+</div>
+
+<p>
+
+ptr now stores the address of age.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Pointer Diagram</h2>
+
+<div class="memory">
+
+age = 20
+
+Address of age = 1000
+
+ptr = 1000
+
+</div>
+
+<div class="memory">
+
+ptr
+ ↓
+age = 20
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Dereference Operator (*)</h2>
+
+<p>
+
+The * operator is used to access the value stored at an address.
+
+</p>
+
+<div class="code">
+
+int age = 20;
+
+int *ptr = &age;
+
+printf("%d",*ptr);
+
+</div>
+
+<div class="output">
+
+Output:
+
+20
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Complete Example</h2>
+
+<div class="code">
+
+#include<stdio.h>
+
+int main()
+{
+
+int num = 50;
+
+int *ptr = &num;
+
+printf("Value = %d\n",num);
+
+printf("Address = %p\n",&num);
+
+printf("Pointer Value = %d",*ptr);
+
+return 0;
+
+}
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Changing Value Through Pointer</h2>
+
+<div class="code">
+
+int num = 10;
+
+int *ptr = &num;
+
+*ptr = 100;
+
+printf("%d",num);
+
+</div>
+
+<div class="output">
+
+Output:
+
+100
+
+</div>
+
+<p>
+
+The original variable changes because the pointer accesses the same memory location.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Pointer and Variable Relationship</h2>
+
+<div class="memory">
+
+num = 10
+
+ptr = address of num
+
+*ptr = value stored in num
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Real Life Example</h2>
+
+<p>
+
+Imagine a house.
+
+</p>
+
+<div class="memory">
+
+House = Variable
+
+House Address = Pointer
+
+</div>
+
+<p>
+
+If you know the address, you can reach the house.
+
+Similarly, if a pointer knows the address of a variable, it can access its value.
+
+</p>
+
+</div><div class="card">
+
+<h2>Pointer Arithmetic</h2>
+
+<p>
+
+Pointers can move through memory locations.
+
+</p>
+
+<div class="code">
+
+int arr[5]={10,20,30,40,50};
+
+int *ptr = arr;
+
+printf("%d\n",*ptr);
+
+ptr++;
+
+printf("%d",*ptr);
+
+</div>
+
+<div class="output">
+
+Output:
+
+10
+
+20
+
+</div>
+
+<div class="tip">
+
+💡 ptr++ moves to the next memory location of the same data type.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Pointers and Arrays</h2>
+
+<div class="code">
+
+int arr[3]={10,20,30};
+
+int *ptr = arr;
+
+printf("%d",*(ptr+1));
+
+</div>
+
+<div class="output">
+
+Output:
+
+20
+
+</div>
+
+<p>
+
+Array name itself stores the address of the first element.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Arrays vs Pointers</h2>
+
+<div class="memory">
+
+arr = Address of First Element
+
+ptr = Variable Holding Address
+
+</div>
+
+<div class="code">
+
+int arr[5];
+
+int *ptr = arr;
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Traversing Array Using Pointer</h2>
+
+<div class="code">
+
+int arr[5]={10,20,30,40,50};
+
+int *ptr = arr;
+
+for(int i=0;i<5;i++)
+{
+printf("%d ",*(ptr+i));
+}
+
+</div>
+
+<div class="output">
+
+10 20 30 40 50
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Call By Value</h2>
+
+<div class="code">
+
+void change(int x)
+{
+x = 100;
+}
+
+</div>
+
+<p>
+
+Original value does not change.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Call By Reference</h2>
+
+<div class="code">
+
+void change(int *x)
+{
+*x = 100;
+}
+
+int main()
+{
+int num = 10;
+
+change(&num);
+
+printf("%d",num);
+}
+
+</div>
+
+<div class="output">
+
+Output:
+
+100
+
+</div>
+
+<p>
+
+Pointer allows the function to modify the original variable.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>NULL Pointer</h2>
+
+<div class="code">
+
+int *ptr = NULL;
+
+</div>
+
+<p>
+
+NULL means the pointer is not pointing to any valid memory location.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Wild Pointer</h2>
+
+<div class="code">
+
+int *ptr;
+
+</div>
+
+<p>
+
+A pointer declared but not initialized is called a Wild Pointer.
+
+</p>
+
+<div class="warning">
+
+⚠ Wild pointers may contain garbage addresses.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Dangling Pointer</h2>
+
+<p>
+
+A pointer pointing to deleted or invalid memory is called a Dangling Pointer.
+
+</p>
+
+<div class="code">
+
+int *ptr;
+
+{
+int x = 10;
+
+ptr = &x;
+}
+
+</div>
+
+<p>
+
+After x goes out of scope, ptr becomes dangling.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Pointer to Pointer</h2>
+
+<div class="code">
+
+int num = 10;
+
+int *ptr = &num;
+
+int **pptr = &ptr;
+
+printf("%d",**pptr);
+
+</div>
+
+<div class="output">
+
+Output:
+
+10
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>🚀 Advanced Knowledge Corner</h2>
+
+<p>
+
+Pointers are heavily used in:
+
+</p>
+
+<ul style="font-size:18px;line-height:2;margin-left:30px;">
+
+<li>Linked Lists</li>
+
+<li>Stacks</li>
+
+<li>Queues</li>
+
+<li>Trees</li>
+
+<li>Graphs</li>
+
+<li>Operating Systems</li>
+
+<li>Compilers</li>
+
+<li>Database Systems</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Common Mistakes</h2>
+
+<div class="warning">
+
+❌ Using an uninitialized pointer.
+
+</div>
+
+<div class="warning">
+
+❌ Dereferencing NULL pointer.
+
+</div>
+
+<div class="warning">
+
+❌ Accessing invalid memory locations.
+
+</div>
+
+<div class="warning">
+
+❌ Confusing address and value.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Interview Questions</h2>
+
+<p>
+
+1. What is a Pointer?
+
+<br><br>
+
+2. What is Pointer Arithmetic?
+
+<br><br>
+
+3. Difference between Call by Value and Call by Reference?
+
+<br><br>
+
+4. What is a NULL Pointer?
+
+<br><br>
+
+5. What is a Wild Pointer?
+
+<br><br>
+
+6. What is a Dangling Pointer?
+
+<br><br>
+
+7. What is a Pointer to Pointer?
+
+<br><br>
+
+8. Why are pointers important in C?
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>MCQs</h2>
+
+<p>
+
+1. Which operator gives the address of a variable?
+
+<br><br>
+
+A) *
+
+<br>
+
+B) %
+
+<br>
+
+C) &
+
+<br>
+
+D) #
+
+<br><br>
+
+✅ Answer: C
+
+</p>
+
+<hr><br>
+
+<p>
+
+2. Which operator accesses the value stored at an address?
+
+<br><br>
+
+A) *
+
+<br>
+
+B) &
+
+<br>
+
+C) %
+
+<br>
+
+D) ::
+
+<br><br>
+
+✅ Answer: A
+
+</p>
+
+<hr><br>
+
+<p>
+
+3. Which pointer points to nothing?
+
+<br><br>
+
+A) Wild Pointer
+
+<br>
+
+B) NULL Pointer
+
+<br>
+
+C) Dangling Pointer
+
+<br>
+
+D) Double Pointer
+
+<br><br>
+
+✅ Answer: B
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Practice Questions</h2>
+
+<ol>
+
+<li>Declare a pointer and print its value.</li>
+<li>Print the address of a variable.</li>
+<li>Access value using pointer.</li>
+<li>Change value using pointer.</li>
+<li>Swap two numbers using pointers.</li>
+<li>Traverse array using pointers.</li>
+<li>Find sum of array using pointers.</li>
+<li>Find largest element using pointers.</li>
+<li>Find smallest element using pointers.</li>
+<li>Reverse array using pointers.</li>
+<li>Create pointer to pointer.</li>
+<li>Demonstrate pointer arithmetic.</li>
+<li>Create Call by Reference program.</li>
+<li>Find string length using pointers.</li>
+<li>Copy string using pointers.</li>
+<li>Concatenate strings using pointers.</li>
+<li>Compare strings using pointers.</li>
+<li>Count vowels using pointers.</li>
+<li>Count spaces using pointers.</li>
+<li>Create student record using pointers.</li>
+<li>Create dynamic memory examples.</li>
+<li>Create linked list node.</li>
+<li>Create stack node.</li>
+<li>Create queue node.</li>
+<li>Implement menu-driven pointer programs.</li>
+
+</ol>
+
+</div>
+
+<div class="btns">
+
+<a href="chapter9.html" class="btn">
+⬅ Previous
+</a>
+
+<a href="chapter11.html" class="btn">
+Next ➡
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+💖 Learn C Easily | Website Made By Kanzul Eman 😉
+
+</footer>
+
+</body>
+</html>

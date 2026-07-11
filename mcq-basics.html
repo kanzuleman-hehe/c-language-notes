@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>C Basics MCQs</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+
+body{
+
+    background:linear-gradient(135deg,#141e30,#243b55);
+    color:white;
+
+}
+
+
+
+header{
+
+    background:#00c6ff;
+    color:black;
+    padding:25px;
+    text-align:center;
+    font-size:32px;
+    font-weight:bold;
+
+}
+
+
+
+.container{
+
+    width:85%;
+    margin:30px auto;
+
+}
+
+
+
+.mcq{
+
+    background:white;
+    color:black;
+    padding:20px;
+    margin:20px 0;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.4);
+
+}
+
+
+
+.mcq h3{
+
+    color:#243b55;
+    margin-bottom:15px;
+
+}
+
+
+
+.option{
+
+    background:#f1f1f1;
+    padding:10px;
+    margin:8px 0;
+    border-radius:8px;
+
+}
+
+
+
+.option:hover{
+
+    background:#00c6ff;
+    color:white;
+
+}
+
+
+
+button{
+
+    margin-top:10px;
+    background:#243b55;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:20px;
+    cursor:pointer;
+
+}
+
+
+button:hover{
+
+    background:#00c6ff;
+    color:black;
+
+}
+
+
+
+.answer{
+
+    display:none;
+    margin-top:12px;
+    color:green;
+    font-weight:bold;
+
+}
+
+
+
+.navigation{
+
+    text-align:center;
+    margin:40px;
+
+}
+
+
+
+.navigation a{
+
+    text-decoration:none;
+    background:#00c6ff;
+    color:black;
+    padding:12px 25px;
+    margin:10px;
+    border-radius:25px;
+    font-weight:bold;
+
+}
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+C Language Basics MCQs
+
+</header>
+
+
+
+<div class="container">
+
+
+
+<div class="mcq">
+
+<h3>1. C language was developed by?</h3>
+
+<div class="option">A) James Gosling</div>
+<div class="option">B) Dennis Ritchie</div>
+<div class="option">C) Bjarne Stroustrup</div>
+<div class="option">D) Guido van Rossum</div>
+
+<button onclick="showAnswer(1)">Show Answer</button>
+
+<p class="answer" id="ans1">
+Answer: B) Dennis Ritchie
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>2. C language was developed at?</h3>
+
+<div class="option">A) Microsoft</div>
+<div class="option">B) Google</div>
+<div class="option">C) Bell Laboratories</div>
+<div class="option">D) IBM</div>
+
+<button onclick="showAnswer(2)">Show Answer</button>
+
+<p class="answer" id="ans2">
+Answer: C) Bell Laboratories
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>3. C language is a ______ language?</h3>
+
+<div class="option">A) Low level</div>
+<div class="option">B) Middle level</div>
+<div class="option">C) Machine level</div>
+<div class="option">D) Assembly level</div>
+
+<button onclick="showAnswer(3)">Show Answer</button>
+
+<p class="answer" id="ans3">
+Answer: B) Middle level
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>4. Which symbol is used to start a comment in C?</h3>
+
+<div class="option">A) //</div>
+<div class="option">B) ##</div>
+<div class="option">C) %%</div>
+<div class="option">D) $$</div>
+
+<button onclick="showAnswer(4)">Show Answer</button>
+
+<p class="answer" id="ans4">
+Answer: A) //
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>5. Which function is the starting point of a C program?</h3>
+
+<div class="option">A) start()</div>
+<div class="option">B) main()</div>
+<div class="option">C) begin()</div>
+<div class="option">D) run()</div>
+
+<button onclick="showAnswer(5)">Show Answer</button>
+
+<p class="answer" id="ans5">
+Answer: B) main()
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>6. Which header file is required for printf()?</h3>
+
+<div class="option">A) stdio.h</div>
+<div class="option">B) math.h</div>
+<div class="option">C) string.h</div>
+<div class="option">D) time.h</div>
+
+<button onclick="showAnswer(6)">Show Answer</button>
+
+<p class="answer" id="ans6">
+Answer: A) stdio.h
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>7. C program file extension is?</h3>
+
+<div class="option">A) .cpp</div>
+<div class="option">B) .java</div>
+<div class="option">C) .c</div>
+<div class="option">D) .html</div>
+
+<button onclick="showAnswer(7)">Show Answer</button>
+
+<p class="answer" id="ans7">
+Answer: C) .c
+</p>
+
+</div>
+
+
+
+
+
+<div class="mcq">
+
+<h3>8. Which keyword is used to return a value from function?</h3>
+
+<div class="option">A) back</div>
+<div class="option">B) return</div>
+<div class="option">C) send</div>
+<div class="option">D) output</div>
+
+<button onclick="showAnswer(8)">Show Answer</button>
+
+<p class="answer" id="ans8">
+Answer: B) return
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+<div class="navigation">
+
+<a href="mcqs.html">
+⬅ MCQ Chapters
+</a>
+
+
+<a href="mcq-variables.html">
+Next Chapter ➡
+</a>
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+function showAnswer(num){
+
+let ans=document.getElementById("ans"+num);
+
+
+if(ans.style.display=="block")
+{
+    ans.style.display="none";
+}
+else
+{
+    ans.style.display="block";
+}
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>

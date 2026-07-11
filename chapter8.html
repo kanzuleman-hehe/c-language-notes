@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 8 - Arrays in C</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f4f7fc;
+}
+
+header{
+background:linear-gradient(135deg,#0f766e,#2563eb);
+padding:60px;
+text-align:center;
+color:white;
+}
+
+header h1{
+font-size:55px;
+}
+
+.creator{
+margin-top:20px;
+font-size:28px;
+font-weight:bold;
+background:rgba(255,255,255,.15);
+display:inline-block;
+padding:12px 25px;
+border-radius:50px;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+padding:40px 0;
+}
+
+.card{
+background:white;
+padding:30px;
+margin-bottom:25px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.card h2{
+color:#2563eb;
+margin-bottom:15px;
+}
+
+.card p{
+font-size:18px;
+line-height:1.8;
+}
+
+.code{
+background:#0f172a;
+color:#38bdf8;
+padding:20px;
+border-radius:15px;
+overflow:auto;
+margin-top:15px;
+font-family:Consolas;
+}
+
+.tip{
+background:#dbeafe;
+padding:15px;
+border-left:5px solid #2563eb;
+border-radius:10px;
+margin-top:15px;
+}
+
+.output{
+background:#dcfce7;
+padding:15px;
+border-left:5px solid green;
+border-radius:10px;
+margin-top:15px;
+}
+
+.warning{
+background:#fee2e2;
+padding:15px;
+border-left:5px solid red;
+border-radius:10px;
+margin-top:15px;
+}
+
+.memory{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-top:20px;
+flex-wrap:wrap;
+}
+
+.box{
+width:80px;
+height:80px;
+background:#2563eb;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:10px;
+font-weight:bold;
+font-size:20px;
+}
+
+.index{
+text-align:center;
+font-size:14px;
+margin-top:5px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>Chapter 8 - Arrays in C</h1>
+
+<div class="creator">
+✨ WEBSITE MADE BY KANZUL EMAN 😉 ✨
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>What is an Array?</h2>
+
+<p>
+
+An Array is a collection of elements of the same data type stored in contiguous memory locations.
+
+Instead of creating multiple variables, we can store many values in a single array.
+
+</p>
+
+<div class="tip">
+
+💡 Arrays help manage large amounts of data efficiently.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Why Do We Need Arrays?</h2>
+
+<p>
+
+Without Array:
+
+</p>
+
+<div class="code">
+
+int m1,m2,m3,m4,m5;
+
+</div>
+
+<p>
+
+With Array:
+
+</p>
+
+<div class="code">
+
+int marks[5];
+
+</div>
+
+<p>
+
+Less code, easier management.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Array Declaration</h2>
+
+<div class="code">
+
+data_type array_name[size];
+
+</div>
+
+<p>
+
+Example:
+
+</p>
+
+<div class="code">
+
+int marks[5];
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Array Initialization</h2>
+
+<div class="code">
+
+int marks[5]={10,20,30,40,50};
+
+</div>
+
+<p>
+
+The array contains five values.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Accessing Array Elements</h2>
+
+<div class="code">
+
+printf("%d",marks[0]);
+
+</div>
+
+<div class="output">
+
+Output:
+
+10
+
+</div>
+
+<p>
+
+Arrays start from index 0.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Memory Representation</h2>
+
+<p>
+
+Array elements are stored in continuous memory locations.
+
+</p>
+
+<div class="memory">
+
+<div>
+<div class="box">10</div>
+<div class="index">Index 0</div>
+</div>
+
+<div>
+<div class="box">20</div>
+<div class="index">Index 1</div>
+</div>
+
+<div>
+<div class="box">30</div>
+<div class="index">Index 2</div>
+</div>
+
+<div>
+<div class="box">40</div>
+<div class="index">Index 3</div>
+</div>
+
+<div>
+<div class="box">50</div>
+<div class="index">Index 4</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Input Values into Array</h2>
+
+<div class="code">
+
+#include<stdio.h>
+
+int main()
+{
+
+int marks[5];
+
+for(int i=0;i<5;i++)
+{
+scanf("%d",&marks[i]);
+}
+
+return 0;
+
+}
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Display Array Elements</h2>
+
+<div class="code">
+
+for(int i=0;i<5;i++)
+{
+printf("%d ",marks[i]);
+}
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Array Traversal</h2>
+
+<p>
+
+Visiting every element of an array one by one is called Array Traversal.
+
+</p>
+
+<div class="code">
+
+for(int i=0;i<5;i++)
+{
+printf("%d ",marks[i]);
+}
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Find Sum of Array Elements</h2>
+
+<div class="code">
+
+int arr[5]={10,20,30,40,50};
+
+int sum=0;
+
+for(int i=0;i<5;i++)
+{
+sum += arr[i];
+}
+
+printf("%d",sum);
+
+</div>
+
+<div class="output">
+
+Output:
+
+150
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Find Average of Array</h2>
+
+<div class="code">
+
+float avg;
+
+avg=sum/5.0;
+
+printf("%.2f",avg);
+
+</div>
+
+<div class="output">
+
+Output:
+
+30.00
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Largest Element in Array</h2>
+
+<div class="code">
+
+int arr[5]={10,90,20,30,40};
+
+int largest=arr[0];
+
+for(int i=1;i<5;i++)
+{
+if(arr[i]>largest)
+{
+largest=arr[i];
+}
+}
+
+printf("%d",largest);
+
+</div>
+
+<div class="output">
+
+Output:
+
+90
+
+</div>
+
+</div><div class="card">
+
+<h2>Smallest Element in Array</h2>
+
+<div class="code">
+
+int arr[5]={10,90,20,30,40};
+
+int smallest=arr[0];
+
+for(int i=1;i<5;i++)
+{
+if(arr[i]<smallest)
+{
+smallest=arr[i];
+}
+}
+
+printf("%d",smallest);
+
+</div>
+
+<div class="output">
+
+Output:
+
+10
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Linear Search</h2>
+
+<p>
+
+Linear Search checks each element one by one.
+
+</p>
+
+<div class="code">
+
+int arr[5]={10,20,30,40,50};
+
+int key=30;
+
+for(int i=0;i<5;i++)
+{
+if(arr[i]==key)
+{
+printf("Found");
+}
+}
+
+</div>
+
+<div class="output">
+
+Output:
+
+Found
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Reverse Array</h2>
+
+<div class="code">
+
+int arr[5]={10,20,30,40,50};
+
+for(int i=4;i>=0;i--)
+{
+printf("%d ",arr[i]);
+}
+
+</div>
+
+<div class="output">
+
+50 40 30 20 10
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Sorting Basics (Ascending Order)</h2>
+
+<p>
+
+Sorting arranges elements in order.
+
+</p>
+
+<div class="code">
+
+for(int i=0;i<5;i++)
+{
+for(int j=i+1;j<5;j++)
+{
+if(arr[i]>arr[j])
+{
+int temp=arr[i];
+arr[i]=arr[j];
+arr[j]=temp;
+}
+}
+}
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>2D Arrays</h2>
+
+<p>
+
+A 2D Array stores data in rows and columns.
+
+</p>
+
+<div class="code">
+
+int matrix[3][3];
+
+</div>
+
+<p>
+
+3 Rows × 3 Columns
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>2D Array Initialization</h2>
+
+<div class="code">
+
+int matrix[2][2] =
+{
+{1,2},
+{3,4}
+};
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Display 2D Array</h2>
+
+<div class="code">
+
+for(int i=0;i<2;i++)
+{
+for(int j=0;j<2;j++)
+{
+printf("%d ",matrix[i][j]);
+}
+
+printf("\n");
+}
+
+</div>
+
+<div class="output">
+
+1 2
+
+3 4
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Matrix Addition</h2>
+
+<div class="code">
+
+for(int i=0;i<2;i++)
+{
+for(int j=0;j<2;j++)
+{
+sum[i][j]=a[i][j]+b[i][j];
+}
+}
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Matrix Multiplication Logic</h2>
+
+<div class="code">
+
+for(int i=0;i<r1;i++)
+{
+for(int j=0;j<c2;j++)
+{
+result[i][j]=0;
+
+for(int k=0;k<c1;k++)
+{
+result[i][j]+=a[i][k]*b[k][j];
+}
+}
+}
+
+</div>
+
+<div class="tip">
+
+💡 Matrix Multiplication is very important in Computer Graphics, AI and Data Science.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>🚀 Advanced Knowledge Corner</h2>
+
+<p>
+
+Arrays occupy contiguous memory locations.
+
+Suppose:
+
+</p>
+
+<div class="code">
+
+int arr[5];
+
+</div>
+
+<p>
+
+If arr[0] is stored at address 1000:
+
+</p>
+
+<div class="code">
+
+arr[0] = 1000
+
+arr[1] = 1004
+
+arr[2] = 1008
+
+arr[3] = 1012
+
+arr[4] = 1016
+
+</div>
+
+<p>
+
+Because an integer usually occupies 4 bytes.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Common Mistakes</h2>
+
+<div class="warning">
+
+❌ Accessing invalid index.
+
+Example:
+
+arr[10]
+
+</div>
+
+<div class="warning">
+
+❌ Forgetting array size.
+
+</div>
+
+<div class="warning">
+
+❌ Using negative index.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Interview Questions</h2>
+
+<p>
+
+1. What is an Array?
+
+<br><br>
+
+2. Why do we use Arrays?
+
+<br><br>
+
+3. What is Array Traversal?
+
+<br><br>
+
+4. Difference between 1D and 2D Arrays?
+
+<br><br>
+
+5. What is Linear Search?
+
+<br><br>
+
+6. What is Sorting?
+
+<br><br>
+
+7. How are arrays stored in memory?
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>MCQs</h2>
+
+<p>
+
+1. Array index starts from?
+
+<br><br>
+
+A) 1
+
+<br>
+
+B) -1
+
+<br>
+
+C) 0
+
+<br>
+
+D) Depends
+
+<br><br>
+
+✅ Answer: C
+
+</p>
+
+<hr><br>
+
+<p>
+
+2. Which loop is commonly used for array traversal?
+
+<br><br>
+
+A) for
+
+<br>
+
+B) switch
+
+<br>
+
+C) goto
+
+<br>
+
+D) typedef
+
+<br><br>
+
+✅ Answer: A
+
+</p>
+
+<hr><br>
+
+<p>
+
+3. Which search checks elements one by one?
+
+<br><br>
+
+A) Binary Search
+
+<br>
+
+B) Linear Search
+
+<br>
+
+C) Tree Search
+
+<br>
+
+D) Graph Search
+
+<br><br>
+
+✅ Answer: B
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Practice Questions</h2>
+
+<ol>
+
+<li>Store 10 numbers in an array.</li>
+<li>Display all elements.</li>
+<li>Find sum of array elements.</li>
+<li>Find average of array elements.</li>
+<li>Find largest element.</li>
+<li>Find smallest element.</li>
+<li>Count even numbers.</li>
+<li>Count odd numbers.</li>
+<li>Search an element.</li>
+<li>Reverse an array.</li>
+<li>Sort array in ascending order.</li>
+<li>Sort array in descending order.</li>
+<li>Find second largest element.</li>
+<li>Find second smallest element.</li>
+<li>Merge two arrays.</li>
+<li>Copy one array into another.</li>
+<li>Find duplicate elements.</li>
+<li>Remove duplicates.</li>
+<li>Count frequency of elements.</li>
+<li>Find missing number.</li>
+<li>Rotate array left.</li>
+<li>Rotate array right.</li>
+<li>Create 2D array.</li>
+<li>Input matrix values.</li>
+<li>Display matrix.</li>
+<li>Add two matrices.</li>
+<li>Subtract two matrices.</li>
+<li>Multiply two matrices.</li>
+<li>Find transpose of matrix.</li>
+<li>Find diagonal elements.</li>
+<li>Find row sums.</li>
+<li>Find column sums.</li>
+<li>Create identity matrix.</li>
+<li>Create upper triangular matrix.</li>
+<li>Create lower triangular matrix.</li>
+<li>Find largest element in matrix.</li>
+<li>Find smallest element in matrix.</li>
+<li>Count positive numbers.</li>
+<li>Count negative numbers.</li>
+<li>Create student marks management using arrays.</li>
+
+</ol>
+
+</div>
+
+<div class="btns">
+
+<a href="chapter7.html" class="btn">
+⬅ Previous
+</a>
+
+<a href="chapter9.html" class="btn">
+Next ➡
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+💖 Learn C Easily | Website Made By Kanzul Eman 😉
+
+</footer>
+
+</body>
+</html>

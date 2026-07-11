@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 9 - Strings in C</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f4f7fc;
+}
+
+header{
+background:linear-gradient(135deg,#ec4899,#7c3aed);
+padding:60px;
+text-align:center;
+color:white;
+}
+
+header h1{
+font-size:55px;
+}
+
+.creator{
+margin-top:20px;
+font-size:28px;
+font-weight:bold;
+background:rgba(255,255,255,.15);
+padding:12px 25px;
+border-radius:50px;
+display:inline-block;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+padding:40px 0;
+}
+
+.card{
+background:white;
+padding:30px;
+margin-bottom:25px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.card h2{
+color:#7c3aed;
+margin-bottom:15px;
+}
+
+.card p{
+font-size:18px;
+line-height:1.8;
+}
+
+.code{
+background:#0f172a;
+color:#38bdf8;
+padding:20px;
+border-radius:15px;
+margin-top:15px;
+overflow:auto;
+font-family:Consolas;
+}
+
+.output{
+background:#dcfce7;
+padding:15px;
+border-left:5px solid green;
+border-radius:10px;
+margin-top:15px;
+}
+
+.tip{
+background:#dbeafe;
+padding:15px;
+border-left:5px solid #2563eb;
+border-radius:10px;
+margin-top:15px;
+}
+
+.warning{
+background:#fee2e2;
+padding:15px;
+border-left:5px solid red;
+border-radius:10px;
+margin-top:15px;
+}
+
+.string-box{
+background:#7c3aed;
+color:white;
+padding:20px;
+border-radius:15px;
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.char{
+background:white;
+color:#7c3aed;
+width:60px;
+height:60px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:22px;
+font-weight:bold;
+border-radius:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>Chapter 9 - Strings in C</h1>
+
+<div class="creator">
+✨ WEBSITE MADE BY KANZUL EMAN 😉 ✨
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>What is a String?</h2>
+
+<p>
+
+A String is a collection of characters stored inside an array.
+
+Strings are used to store names, sentences and text data.
+
+</p>
+
+<div class="tip">
+
+💡 String = Character Array + Null Character ('\0')
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>String Declaration</h2>
+
+<div class="code">
+
+char name[20];
+
+</div>
+
+<p>
+
+This string can store up to 19 characters plus the null character.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>String Initialization</h2>
+
+<div class="code">
+
+char name[]="KANZUL";
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Memory Representation</h2>
+
+<p>
+
+String:
+
+</p>
+
+<div class="code">
+
+char name[]="KANZUL";
+
+</div>
+
+<div class="string-box">
+
+<div class="char">K</div>
+<div class="char">A</div>
+<div class="char">N</div>
+<div class="char">Z</div>
+<div class="char">U</div>
+<div class="char">L</div>
+<div class="char">\0</div>
+
+</div>
+
+<p>
+
+Every string ends with a Null Character.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Input String Using scanf()</h2>
+
+<div class="code">
+
+char name[20];
+
+scanf("%s",name);
+
+</div>
+
+<div class="warning">
+
+⚠ scanf() stops at spaces.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Input String Using fgets()</h2>
+
+<div class="code">
+
+char name[50];
+
+fgets(name,50,stdin);
+
+</div>
+
+<div class="tip">
+
+✅ fgets() can read spaces.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Output String</h2>
+
+<div class="code">
+
+printf("%s",name);
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>String Length - strlen()</h2>
+
+<p>
+
+strlen() returns the number of characters.
+
+</p>
+
+<div class="code">
+
+#include<string.h>
+
+char name[]="KANZUL";
+
+printf("%d",strlen(name));
+
+</div>
+
+<div class="output">
+
+Output:
+
+6
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Copy String - strcpy()</h2>
+
+<div class="code">
+
+char a[20]="Hello";
+char b[20];
+
+strcpy(b,a);
+
+</div>
+
+<p>
+
+Now b contains Hello.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Concatenate Strings - strcat()</h2>
+
+<div class="code">
+
+char a[50]="Hello ";
+char b[]="World";
+
+strcat(a,b);
+
+printf("%s",a);
+
+</div>
+
+<div class="output">
+
+Output:
+
+Hello World
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Compare Strings - strcmp()</h2>
+
+<div class="code">
+
+strcmp("Ali","Ali");
+
+</div>
+
+<div class="output">
+
+Output:
+
+0
+
+</div>
+
+<p>
+
+0 means both strings are equal.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Access Individual Characters</h2>
+
+<div class="code">
+
+char name[]="KANZUL";
+
+printf("%c",name[0]);
+
+</div>
+
+<div class="output">
+
+Output:
+
+K
+
+</div>
+
+</div><div class="card">
+
+<h2>String Traversal</h2>
+
+<p>
+
+Accessing every character one by one is called String Traversal.
+
+</p>
+
+<div class="code">
+
+char name[]="Muqtasid Ali";
+
+for(int i=0; name[i]!='\0'; i++)
+{
+printf("%c\n",name[i]);
+}
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Reverse a String</h2>
+
+<div class="code">
+
+char str[]="Muqtasid";
+
+int len=strlen(str);
+
+for(int i=len-1;i>=0;i--)
+{
+printf("%c",str[i]);
+}
+
+</div>
+
+<div class="output">
+
+Output:
+
+disatquM
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Palindrome String</h2>
+
+<p>
+
+A palindrome reads the same forward and backward.
+
+</p>
+
+<div class="code">
+
+char str[]="madam";
+
+int len=strlen(str);
+
+int flag=1;
+
+for(int i=0;i<len/2;i++)
+{
+if(str[i]!=str[len-1-i])
+{
+flag=0;
+break;
+}
+}
+
+if(flag)
+printf("Palindrome");
+else
+printf("Not Palindrome");
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Count Vowels</h2>
+
+<div class="code">
+
+char str[]="Muqtasid Ali";
+
+int count=0;
+
+for(int i=0;str[i]!='\0';i++)
+{
+char ch=str[i];
+
+if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||
+   ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
+{
+count++;
+}
+}
+
+printf("%d",count);
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Count Spaces</h2>
+
+<div class="code">
+
+char str[]="Muqtasid Ali";
+
+int spaces=0;
+
+for(int i=0;str[i]!='\0';i++)
+{
+if(str[i]==' ')
+{
+spaces++;
+}
+}
+
+printf("%d",spaces);
+
+</div>
+
+<div class="output">
+
+Output:
+
+1
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Convert to Uppercase</h2>
+
+<div class="code">
+
+char str[]="muqtasid";
+
+for(int i=0;str[i]!='\0';i++)
+{
+if(str[i]>='a' && str[i]<='z')
+{
+str[i]=str[i]-32;
+}
+}
+
+printf("%s",str);
+
+</div>
+
+<div class="output">
+
+Output:
+
+MUQTASID
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Convert to Lowercase</h2>
+
+<div class="code">
+
+char str[]="MUQTASID";
+
+for(int i=0;str[i]!='\0';i++)
+{
+if(str[i]>='A' && str[i]<='Z')
+{
+str[i]=str[i]+32;
+}
+}
+
+printf("%s",str);
+
+</div>
+
+<div class="output">
+
+Output:
+
+muqtasid
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>🚀 Advanced Knowledge Corner</h2>
+
+<p>
+
+Strings are actually character arrays stored in memory.
+
+</p>
+
+<div class="code">
+
+char name[]="Muqtasid";
+
+</div>
+
+<p>
+
+Memory Layout:
+
+</p>
+
+<div class="code">
+
+M u q t a s i d \0
+
+</div>
+
+<p>
+
+The null character marks the end of the string.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Common Mistakes</h2>
+
+<div class="warning">
+
+❌ Forgetting the null character.
+
+</div>
+
+<div class="warning">
+
+❌ Using scanf() for full names.
+
+</div>
+
+<div class="warning">
+
+❌ Accessing characters outside string length.
+
+</div>
+
+<div class="warning">
+
+❌ Using == instead of strcmp().
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Interview Questions</h2>
+
+<p>
+
+1. What is a String?
+
+<br><br>
+
+2. What is the purpose of '\\0'?
+
+<br><br>
+
+3. Difference between scanf() and fgets()?
+
+<br><br>
+
+4. What does strlen() do?
+
+<br><br>
+
+5. What does strcmp() return?
+
+<br><br>
+
+6. What is string traversal?
+
+<br><br>
+
+7. Why are strings stored as character arrays?
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>MCQs</h2>
+
+<p>
+
+1. Which function returns string length?
+
+<br><br>
+
+A) strcpy()
+
+<br>
+
+B) strlen()
+
+<br>
+
+C) strcat()
+
+<br>
+
+D) strcmp()
+
+<br><br>
+
+✅ Answer: B
+
+</p>
+
+<hr><br>
+
+<p>
+
+2. Which character marks the end of a string?
+
+<br><br>
+
+A) EOF
+
+<br>
+
+B) #
+
+<br>
+
+C) \\0
+
+<br>
+
+D) NULL
+
+<br><br>
+
+✅ Answer: C
+
+</p>
+
+<hr><br>
+
+<p>
+
+3. Which function compares two strings?
+
+<br><br>
+
+A) strcmp()
+
+<br>
+
+B) strcpy()
+
+<br>
+
+C) strlen()
+
+<br>
+
+D) strcat()
+
+<br><br>
+
+✅ Answer: A
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Practice Questions</h2>
+
+<ol>
+
+<li>Input a string and display it.</li>
+<li>Find string length.</li>
+<li>Copy one string into another.</li>
+<li>Concatenate two strings.</li>
+<li>Compare two strings.</li>
+<li>Reverse a string.</li>
+<li>Check palindrome string.</li>
+<li>Count vowels.</li>
+<li>Count consonants.</li>
+<li>Count spaces.</li>
+<li>Count digits.</li>
+<li>Count special characters.</li>
+<li>Convert to uppercase.</li>
+<li>Convert to lowercase.</li>
+<li>Toggle case.</li>
+<li>Remove spaces.</li>
+<li>Find frequency of characters.</li>
+<li>Find duplicate characters.</li>
+<li>Sort characters.</li>
+<li>Find largest word in a sentence.</li>
+<li>Find smallest word in a sentence.</li>
+<li>Check anagram.</li>
+<li>Reverse words in sentence.</li>
+<li>Replace a character.</li>
+<li>Create student record using strings.</li>
+</ol>
+
+</div>
+
+<div class="btns">
+
+<a href="chapter8.html" class="btn">
+⬅ Previous
+</a>
+
+<a href="chapter10.html" class="btn">
+Next ➡
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+💖 Learn C Easily | Website Made By Kanzul Eman 😉
+
+</footer>
+
+</body>
+</html>

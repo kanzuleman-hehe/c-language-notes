@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 7 - Functions in C</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f4f7fc;
+}
+
+header{
+background:linear-gradient(135deg,#7c3aed,#2563eb);
+padding:60px;
+text-align:center;
+color:white;
+}
+
+header h1{
+font-size:55px;
+}
+
+.creator{
+margin-top:20px;
+font-size:28px;
+font-weight:bold;
+background:rgba(255,255,255,.15);
+display:inline-block;
+padding:12px 25px;
+border-radius:50px;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+padding:40px 0;
+}
+
+.card{
+background:white;
+padding:30px;
+margin-bottom:25px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.card h2{
+color:#2563eb;
+margin-bottom:15px;
+}
+
+.card p{
+font-size:18px;
+line-height:1.8;
+}
+
+.code{
+background:#0f172a;
+color:#38bdf8;
+padding:20px;
+border-radius:15px;
+margin-top:15px;
+overflow:auto;
+font-family:Consolas;
+}
+
+.tip{
+background:#dbeafe;
+padding:15px;
+border-left:5px solid #2563eb;
+border-radius:10px;
+margin-top:15px;
+}
+
+.output{
+background:#dcfce7;
+padding:15px;
+border-left:5px solid green;
+border-radius:10px;
+margin-top:15px;
+}
+
+.warning{
+background:#fee2e2;
+padding:15px;
+border-left:5px solid red;
+border-radius:10px;
+margin-top:15px;
+}
+
+.btn{
+background:#2563eb;
+color:white;
+padding:12px 25px;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+}
+
+.btns{
+display:flex;
+justify-content:space-between;
+margin-top:40px;
+}
+
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:50px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Chapter 7 - Functions in C</h1>
+
+<div class="creator">
+✨ WEBSITE MADE BY KANZUL EMAN 😉 ✨
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>What is a Function?</h2>
+
+<p>
+
+A Function is a block of code that performs a specific task.
+
+Instead of writing the same code repeatedly,
+we can write it once inside a function and call it whenever needed.
+
+</p>
+
+<div class="tip">
+
+💡 Functions make programs shorter, cleaner and easier to maintain.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Why Do We Use Functions?</h2>
+
+<p>
+
+✔ Reduce Code Repetition
+
+<br><br>
+
+✔ Improve Readability
+
+<br><br>
+
+✔ Easier Debugging
+
+<br><br>
+
+✔ Better Program Structure
+
+<br><br>
+
+✔ Reusability
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Real Life Example</h2>
+
+<p>
+
+Imagine a calculator application.
+
+Instead of writing addition code again and again,
+we create one function:
+
+</p>
+
+<div class="code">
+
+int add(int a,int b)
+{
+return a+b;
+}
+
+</div>
+
+<p>
+
+Now we can use it anywhere.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Function Structure</h2>
+
+<div class="code">
+
+return_type function_name(parameters)
+{
+    // code
+}
+
+</div>
+
+<p>
+
+Example:
+
+</p>
+
+<div class="code">
+
+int add(int a,int b)
+{
+return a+b;
+}
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Function Declaration (Prototype)</h2>
+
+<p>
+
+A Function Prototype tells the compiler
+that a function exists.
+
+</p>
+
+<div class="code">
+
+int add(int,int);
+
+</div>
+
+<div class="tip">
+
+💡 Prototype is usually written before main().
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Function Definition</h2>
+
+<p>
+
+The actual code of the function.
+
+</p>
+
+<div class="code">
+
+int add(int a,int b)
+{
+return a+b;
+}
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Function Call</h2>
+
+<p>
+
+Calling means executing a function.
+
+</p>
+
+<div class="code">
+
+int result;
+
+result = add(10,20);
+
+</div>
+
+<div class="output">
+
+Output:
+
+30
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Complete Example</h2>
+
+<div class="code">
+
+#include<stdio.h>
+
+int add(int,int);
+
+int main()
+{
+
+int result;
+
+result = add(10,20);
+
+printf("%d",result);
+
+return 0;
+
+}
+
+int add(int a,int b)
+{
+return a+b;
+}
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Parameters and Arguments</h2>
+
+<p>
+
+Parameters receive values.
+
+Arguments send values.
+
+</p>
+
+<div class="code">
+
+int add(int a,int b)
+
+</div>
+
+<p>
+
+a and b are Parameters.
+
+</p>
+
+<div class="code">
+
+add(10,20);
+
+</div>
+
+<p>
+
+10 and 20 are Arguments.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Memory Visualization</h2>
+
+<div class="code">
+
+add(10,20);
+
+</div>
+
+<p>
+
+Argument 10 goes into parameter a
+
+<br><br>
+
+Argument 20 goes into parameter b
+
+<br><br>
+
+Function returns 30
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Functions With No Parameters</h2>
+
+<div class="code">
+
+void greet()
+{
+printf("Welcome");
+}
+
+</div>
+
+<p>
+
+Calling:
+
+</p>
+
+<div class="code">
+
+greet();
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Functions With Return Values</h2>
+
+<div class="code">
+
+int square(int n)
+{
+return n*n;
+}
+
+</div>
+
+<div class="output">
+
+square(5)
+
+Output = 25
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>void Functions</h2>
+
+<p>
+
+void means the function returns nothing.
+
+</p>
+
+<div class="code">
+
+void hello()
+{
+printf("Hello");
+}
+
+</div>
+
+</div>
+<div class="card">
+
+<h2>Local Variables</h2>
+
+<p>
+
+A Local Variable is declared inside a function.
+
+It can only be used within that function.
+
+</p>
+
+<div class="code">
+
+void test()
+{
+int x = 10;
+
+printf("%d",x);
+}
+
+</div>
+
+<div class="tip">
+
+💡 Local variables are destroyed when the function ends.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Global Variables</h2>
+
+<p>
+
+A Global Variable is declared outside all functions.
+
+It can be accessed by every function.
+
+</p>
+
+<div class="code">
+
+#include<stdio.h>
+
+int x = 100;
+
+void show()
+{
+printf("%d",x);
+}
+
+</div>
+
+<div class="warning">
+
+⚠ Avoid excessive use of global variables because they can make programs difficult to manage.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Call By Value</h2>
+
+<p>
+
+In C, values are copied and sent to the function.
+
+Original variables remain unchanged.
+
+</p>
+
+<div class="code">
+
+#include<stdio.h>
+
+void change(int x)
+{
+x = 100;
+}
+
+int main()
+{
+int a = 10;
+
+change(a);
+
+printf("%d",a);
+
+return 0;
+}
+
+</div>
+
+<div class="output">
+
+Output:
+
+10
+
+</div>
+
+<p>
+
+The original value did not change because only a copy was passed.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>🚀 Recursion</h2>
+
+<p>
+
+Recursion is a technique where a function calls itself.
+
+</p>
+
+<div class="code">
+
+int factorial(int n)
+{
+if(n==1)
+return 1;
+
+return n * factorial(n-1);
+}
+
+</div>
+
+<div class="output">
+
+factorial(5)
+
+Output:
+
+120
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>How Recursion Works?</h2>
+
+<div class="code">
+
+factorial(5)
+
+5 × factorial(4)
+
+5 × 4 × factorial(3)
+
+5 × 4 × 3 × factorial(2)
+
+5 × 4 × 3 × 2 × factorial(1)
+
+5 × 4 × 3 × 2 × 1
+
+120
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Real World Example</h2>
+
+<div class="code">
+
+float calculateCGPA(float totalPoints,int creditHours)
+{
+return totalPoints / creditHours;
+}
+
+</div>
+
+<p>
+
+Functions help divide large programs into smaller reusable blocks.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Common Mistakes</h2>
+
+<div class="warning">
+
+❌ Forgetting to call the function.
+
+</div>
+
+<div class="warning">
+
+❌ Returning a value from a void function.
+
+</div>
+
+<div class="warning">
+
+❌ Using wrong return type.
+
+</div>
+
+<div class="warning">
+
+❌ Missing semicolon after function prototype.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Interview Questions</h2>
+
+<p>
+
+1. What is a Function?
+
+<br><br>
+
+2. Difference between Function Declaration and Definition?
+
+<br><br>
+
+3. What are Parameters and Arguments?
+
+<br><br>
+
+4. What is Recursion?
+
+<br><br>
+
+5. Difference between Local and Global Variables?
+
+<br><br>
+
+6. What is Call By Value?
+
+<br><br>
+
+7. Why are Functions important?
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>MCQs</h2>
+
+<p>
+
+1. Which keyword means "returns nothing"?
+
+<br><br>
+
+A) null
+
+<br>
+
+B) return
+
+<br>
+
+C) void
+
+<br>
+
+D) int
+
+<br><br>
+
+✅ Answer: C
+
+</p>
+
+<hr><br>
+
+<p>
+
+2. Which function can call itself?
+
+<br><br>
+
+A) Main Function
+
+<br>
+
+B) Recursive Function
+
+<br>
+
+C) Global Function
+
+<br>
+
+D) Void Function
+
+<br><br>
+
+✅ Answer: B
+
+</p>
+
+<hr><br>
+
+<p>
+
+3. Variables declared inside a function are called?
+
+<br><br>
+
+A) Global Variables
+
+<br>
+
+B) External Variables
+
+<br>
+
+C) Local Variables
+
+<br>
+
+D) Static Variables
+
+<br><br>
+
+✅ Answer: C
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Practice Questions</h2>
+
+<ol>
+
+<li>Create a function to add two numbers.</li>
+
+<li>Create a function to subtract two numbers.</li>
+
+<li>Create a function to multiply two numbers.</li>
+
+<li>Create a function to divide two numbers.</li>
+
+<li>Create a function to find square of a number.</li>
+
+<li>Create a function to find cube of a number.</li>
+
+<li>Create a function to calculate area of a circle.</li>
+
+<li>Create a function to calculate area of a rectangle.</li>
+
+<li>Create a function to find maximum of two numbers.</li>
+
+<li>Create a function to find minimum of two numbers.</li>
+
+<li>Create a function to check even or odd.</li>
+
+<li>Create a function to check positive or negative.</li>
+
+<li>Create a function to calculate factorial.</li>
+
+<li>Create a recursive factorial function.</li>
+
+<li>Create a recursive Fibonacci function.</li>
+
+<li>Create a function to find prime numbers.</li>
+
+<li>Create a function to reverse a number.</li>
+
+<li>Create a function to check palindrome number.</li>
+
+<li>Create a function to calculate CGPA.</li>
+
+<li>Create a menu-driven calculator using functions.</li>
+
+<li>Create a function for power calculation.</li>
+
+<li>Create a function to swap two numbers.</li>
+
+<li>Create a function to count digits.</li>
+
+<li>Create a function to sum digits.</li>
+
+<li>Create a function to generate multiplication tables.</li>
+
+<li>Create a function to generate star patterns.</li>
+
+<li>Create a function to print Fibonacci series.</li>
+
+<li>Create a function to calculate percentage.</li>
+
+<li>Create a function to check Armstrong number.</li>
+
+<li>Create a function to find largest digit.</li>
+
+</ol>
+
+</div>
+
+<div class="btns">
+
+<a href="chapter6.html" class="btn">
+⬅ Previous
+</a>
+
+<a href="chapter8.html" class="btn">
+Next ➡
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+💖 Learn C Easily | Website Made By Kanzul Eman 😉
+
+</footer>
+
+</body>
+</html>
