@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>C Conditions Programs</title>
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+
+body{
+
+    background:linear-gradient(135deg,#141e30,#243b55);
+    color:white;
+
+}
+
+
+
+header{
+
+    background:#00c6ff;
+    color:black;
+    padding:25px;
+    text-align:center;
+    font-size:32px;
+    font-weight:bold;
+
+}
+
+
+
+.container{
+
+    width:85%;
+    margin:30px auto;
+
+}
+
+
+
+.program{
+
+    background:white;
+    color:black;
+    padding:25px;
+    margin:25px 0;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.4);
+
+}
+
+
+
+.program h2{
+
+    color:#243b55;
+    margin-bottom:15px;
+
+}
+
+
+
+pre{
+
+    background:#111;
+    color:#00ff99;
+    padding:20px;
+    border-radius:10px;
+    overflow:auto;
+
+}
+
+
+
+button{
+
+    background:#243b55;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:20px;
+    cursor:pointer;
+    margin-top:10px;
+
+}
+
+
+
+button:hover{
+
+    background:#00c6ff;
+    color:black;
+
+}
+
+
+
+.navigation{
+
+    text-align:center;
+    margin:40px;
+
+}
+
+
+
+.navigation a{
+
+    text-decoration:none;
+    background:#00c6ff;
+    color:black;
+    padding:12px 25px;
+    border-radius:25px;
+    margin:10px;
+    font-weight:bold;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+C Conditions Programs
+
+</header>
+
+
+
+
+<div class="container">
+
+
+
+
+
+<div class="program">
+
+<h2>1. Check Number is Positive or Negative</h2>
+
+
+<pre id="code1">
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int num;
+
+    printf("Enter number: ");
+    scanf("%d",&num);
+
+
+    if(num >= 0)
+    {
+        printf("Positive Number");
+    }
+    else
+    {
+        printf("Negative Number");
+    }
+
+
+    return 0;
+}
+</pre>
+
+
+<button onclick="copyCode('code1')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="program">
+
+<h2>2. Check Even or Odd Number</h2>
+
+
+<pre id="code2">
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int num;
+
+
+    printf("Enter number: ");
+    scanf("%d",&num);
+
+
+    if(num % 2 == 0)
+    {
+        printf("Even Number");
+    }
+    else
+    {
+        printf("Odd Number");
+    }
+
+
+    return 0;
+}
+</pre>
+
+
+<button onclick="copyCode('code2')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="program">
+
+<h2>3. Find Greatest Among Two Numbers</h2>
+
+
+<pre id="code3">
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a,b;
+
+
+    printf("Enter two numbers: ");
+    scanf("%d %d",&a,&b);
+
+
+
+    if(a>b)
+    {
+        printf("A is Greater");
+    }
+
+    else
+    {
+        printf("B is Greater");
+    }
+
+
+
+    return 0;
+}
+</pre>
+
+
+<button onclick="copyCode('code3')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="program">
+
+<h2>4. Find Greatest Among Three Numbers (Nested If)</h2>
+
+
+<pre id="code4">
+#include &lt;stdio.h&gt;
+
+int main()
+{
+
+    int a,b,c;
+
+
+    printf("Enter three numbers: ");
+    scanf("%d%d%d",&a,&b,&c);
+
+
+
+    if(a>b)
+    {
+        if(a>c)
+        {
+            printf("A is Greatest");
+        }
+        else
+        {
+            printf("C is Greatest");
+        }
+    }
+
+    else
+    {
+        if(b>c)
+        {
+            printf("B is Greatest");
+        }
+        else
+        {
+            printf("C is Greatest");
+        }
+    }
+
+
+    return 0;
+}
+</pre>
+
+
+<button onclick="copyCode('code4')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="program">
+
+<h2>5. Simple Calculator Using Switch</h2>
+
+
+<pre id="code5">
+#include &lt;stdio.h&gt;
+
+int main()
+{
+
+    int a,b;
+    char op;
+
+
+    printf("Enter operator (+,-,*,/): ");
+    scanf("%c",&op);
+
+
+
+    printf("Enter two numbers: ");
+    scanf("%d%d",&a,&b);
+
+
+
+    switch(op)
+    {
+
+        case '+':
+            printf("Result = %d",a+b);
+            break;
+
+
+        case '-':
+            printf("Result = %d",a-b);
+            break;
+
+
+        case '*':
+            printf("Result = %d",a*b);
+            break;
+
+
+        case '/':
+            printf("Result = %d",a/b);
+            break;
+
+
+        default:
+            printf("Invalid Operator");
+
+    }
+
+
+    return 0;
+}
+</pre>
+
+
+<button onclick="copyCode('code5')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+<div class="navigation">
+
+
+<a href="program-basics.html">
+⬅ Previous
+</a>
+
+
+<a href="program-loops.html">
+Next Chapter ➡
+</a>
+
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+function copyCode(id)
+{
+
+let code=document.getElementById(id).innerText;
+
+navigator.clipboard.writeText(code);
+
+alert("Code Copied Successfully!");
+
+}
+
+
+</script>
+
+
+
+
+</body>
+
+</html>

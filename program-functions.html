@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>C Functions Programs</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+
+body{
+
+    background:linear-gradient(135deg,#141e30,#243b55);
+    color:white;
+
+}
+
+
+header{
+
+    background:#00c6ff;
+    color:black;
+    padding:25px;
+    text-align:center;
+    font-size:32px;
+    font-weight:bold;
+
+}
+
+
+.container{
+
+    width:85%;
+    margin:30px auto;
+
+}
+
+
+
+.program{
+
+    background:white;
+    color:black;
+    padding:25px;
+    margin:25px 0;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.4);
+
+}
+
+
+
+.program h2{
+
+    color:#243b55;
+    margin-bottom:15px;
+
+}
+
+
+
+pre{
+
+    background:#111;
+    color:#00ff99;
+    padding:20px;
+    border-radius:10px;
+    overflow:auto;
+
+}
+
+
+
+button{
+
+    background:#243b55;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:20px;
+    cursor:pointer;
+    margin-top:10px;
+
+}
+
+
+button:hover{
+
+    background:#00c6ff;
+    color:black;
+
+}
+
+
+
+.navigation{
+
+    text-align:center;
+    margin:40px;
+
+}
+
+
+
+.navigation a{
+
+    text-decoration:none;
+    background:#00c6ff;
+    color:black;
+    padding:12px 25px;
+    border-radius:25px;
+    margin:10px;
+    font-weight:bold;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+C Functions Programs
+
+</header>
+
+
+
+
+<div class="container">
+
+
+
+
+
+<div class="program">
+
+<h2>1. Function Without Arguments</h2>
+
+
+<pre id="code1">
+#include &lt;stdio.h&gt;
+
+
+void hello()
+{
+    printf("Hello From Function");
+}
+
+
+int main()
+{
+
+    hello();
+
+    return 0;
+
+}
+</pre>
+
+
+<button onclick="copyCode('code1')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="program">
+
+<h2>2. Function With Arguments</h2>
+
+
+<pre id="code2">
+#include &lt;stdio.h&gt;
+
+
+void add(int a,int b)
+{
+    printf("Sum = %d",a+b);
+}
+
+
+
+int main()
+{
+
+    int x=5,y=10;
+
+
+    add(x,y);
+
+
+    return 0;
+
+}
+</pre>
+
+
+<button onclick="copyCode('code2')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="program">
+
+<h2>3. Function With Return Value</h2>
+
+
+<pre id="code3">
+#include &lt;stdio.h&gt;
+
+
+int square(int n)
+{
+    return n*n;
+}
+
+
+
+int main()
+{
+
+    int result;
+
+
+    result=square(5);
+
+
+    printf("Square = %d",result);
+
+
+
+    return 0;
+
+}
+</pre>
+
+
+<button onclick="copyCode('code3')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="program">
+
+<h2>4. Call By Value</h2>
+
+
+<pre id="code4">
+#include &lt;stdio.h&gt;
+
+
+void change(int x)
+{
+    x=100;
+}
+
+
+
+int main()
+{
+
+    int a=10;
+
+
+    change(a);
+
+
+    printf("%d",a);
+
+
+
+    return 0;
+
+}
+</pre>
+
+
+<button onclick="copyCode('code4')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="program">
+
+<h2>5. Call By Reference Using Pointer</h2>
+
+
+<pre id="code5">
+#include &lt;stdio.h&gt;
+
+
+void change(int *x)
+{
+    *x=100;
+}
+
+
+
+int main()
+{
+
+    int a=10;
+
+
+    change(&a);
+
+
+    printf("%d",a);
+
+
+
+    return 0;
+
+}
+</pre>
+
+
+<button onclick="copyCode('code5')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="program">
+
+<h2>6. Factorial Using Recursion</h2>
+
+
+<pre id="code6">
+#include &lt;stdio.h&gt;
+
+
+int factorial(int n)
+{
+
+    if(n==0)
+        return 1;
+
+
+    return n * factorial(n-1);
+
+}
+
+
+
+int main()
+{
+
+    int num=5;
+
+
+    printf("Factorial = %d",
+    factorial(num));
+
+
+    return 0;
+
+}
+</pre>
+
+
+<button onclick="copyCode('code6')">
+Copy Code
+</button>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="navigation">
+
+
+<a href="program-arrays.html">
+⬅ Previous
+</a>
+
+
+<a href="program-pointers.html">
+Next Chapter ➡
+</a>
+
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+function copyCode(id)
+{
+
+let code=document.getElementById(id).innerText;
+
+navigator.clipboard.writeText(code);
+
+alert("Code Copied Successfully!");
+
+}
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
